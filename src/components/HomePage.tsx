@@ -4,6 +4,8 @@ import { useStoryNavigation } from '../hooks/useStoryNavigation';
 import { PortraitGallery } from './PortraitGallery';
 import { StoryView } from './StoryView';
 import { BackButton } from './BackButton';
+import { CitySection } from './CitySection';
+import { SiteFooter } from './SiteFooter';
 
 export function HomePage() {
   const { selectedId, navigate } = useStoryNavigation();
@@ -67,7 +69,9 @@ export function HomePage() {
           )}
         </section>
         {person && <div id="narrativa" tabIndex={-1}><StoryView person={person} people={interviewees} onSelect={navigate} onBack={() => navigate(null)} /></div>}
+        {!person && <CitySection />}
       </main>
+      <SiteFooter />
     </>
   );
 }

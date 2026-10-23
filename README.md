@@ -46,6 +46,15 @@ Não foram incluídos backend, autenticação, CMS, áudio, vídeo, linha do tem
 
 ## Estrutura
 
+A página inicial também inclui a seção **Cidade do Idoso**, com capa de tela inteira. A apresentação fica oculta até a ativação do botão “Conhecer a Cidade do Idoso”, por clique, Enter ou Espaço. O texto aparece abaixo, recebe o foco e é alcançado por rolagem suave, mantendo o tamanho da fotografia. “Voltar à fotografia” ou Escape fecha a apresentação e devolve o foco ao botão. A preferência por movimento reduzido desativa a rolagem animada.
+
+- `src/components/CitySection.tsx`: capa, acesso ao texto e apresentação da Cidade do Idoso.
+- `src/data/city.ts`: resumo da página oficial, fonte, data de consulta e fotografia.
+- `src/components/SiteFooter.tsx`: rodapé compartilhado com créditos acadêmicos e contatos.
+- `src/data/project.ts`: nomes, telefones, perfis do LinkedIn e GitHub do desenvolvedor.
+
+A foto indicada no Instagram não ficou acessível durante o desenvolvimento. A capa usa provisoriamente uma imagem da página oficial da Prefeitura. Para trocar a foto, altere `city.image.src`, a descrição e o crédito em `src/data/city.ts`; uma imagem local pode ser colocada em `public/images/`.
+
 ```text
 envelhecer-em-foco/
 ├── public/
@@ -59,14 +68,18 @@ envelhecer-em-foco/
 │   ├── components/
 │   │   ├── Arrow.tsx
 │   │   ├── BackButton.tsx
+│   │   ├── CitySection.tsx
 │   │   ├── HomePage.tsx
 │   │   ├── PortraitGallery.tsx
 │   │   ├── PortraitImage.tsx
 │   │   ├── PortraitPanel.tsx
+│   │   ├── SiteFooter.tsx
 │   │   ├── StorySection.tsx
 │   │   └── StoryView.tsx
 │   ├── data/
-│   │   └── interviewees.ts
+│   │   ├── city.ts
+│   │   ├── interviewees.ts
+│   │   └── project.ts
 │   ├── hooks/
 │   │   └── useStoryNavigation.ts
 │   ├── main.tsx
@@ -120,8 +133,10 @@ Fotografias de demonstração, com links de origem:
 
 As quatro ilustrações SVG locais são placeholders gráficos criados para este protótipo.
 
-## Validação desta entrega
+## Revisão de UX
 
-A sintaxe dos 13 arquivos TypeScript/TSX foi verificada com o compilador TypeScript disponível no ambiente. A tipagem da estrutura de dados passou. Também foram conferidos os quatro participantes, os 12 capítulos, as 22 importações locais e as quatro ilustrações alternativas. A tipagem completa dos componentes React ainda depende da instalação das dependências. A instalação do npm foi tentada, mas o ambiente de execução não conseguiu resolver `registry.npmjs.org` (erro `ENOTFOUND`). Por isso, a compilação com Vite e a validação visual no navegador ainda precisam ser executadas em um ambiente com acesso às dependências.
+O título da galeria considera a altura da tela, com espaço reservado antes dos nomes. A capa da Cidade do Idoso traz “O lugar dessas histórias” em itálico acima do título e uma introdução em fonte serifada. O botão não tem moldura e usa uma seta em destaque, com estados de hover e foco visível. A apresentação preserva a divisão em assuntos, sem cabeçalho adicional ou numeração. O rodapé mantém as cores do projeto, com tipografia sem serifa, espaçamentos menores e os links de contato, incluindo o GitHub de Gustavo.
 
-Após instalar, confira em desktop e celular: os quatro retratos, Enter/Espaço, troca entre todas as histórias, links diretos, Voltar/Avançar, Escape, retorno do foco, rolagem até a narrativa e redução de movimento.
+A revisão anterior confirmou ausência de sobreposição entre “Em foco” e os nomes em desktop e celular. Nesta revisão, a capa e o conteúdo foram conferidos em 989 × 572, 1280 × 720, 390 × 844 e 320 × 568, sem rolagem horizontal ou cortes no texto da capa. A apresentação começa oculta; Enter, Espaço e clique a revelam e transferem o foco. O botão de retorno e Escape a fecham e restauram o foco. A fotografia mantém a altura da tela. O endereço do GitHub foi conferido sem abrir páginas externas.
+
+O `typecheck` passou nesta revisão. A compilação de produção continua limitada pelo erro `EPERM` de `realpath` no ambiente do Codex; a prévia já em execução permitiu verificar a interface no navegador.
