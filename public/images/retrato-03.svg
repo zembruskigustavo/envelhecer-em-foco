@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
+<title id="title">Retrato ilustrativo 3</title><desc id="desc">Ilustração provisória de um rosto. Não representa uma pessoa entrevistada.</desc>
+<defs>
+<radialGradient id="bg"><stop stop-color="#75746f"/><stop offset="1" stop-color="#20211f"/></radialGradient>
+<linearGradient id="skin" x1="0" x2="1" y1=".2" y2=".7"><stop stop-color="#d0cdc3"/><stop offset=".4" stop-color="#a9a79f"/><stop offset="1" stop-color="#565750"/></linearGradient>
+<linearGradient id="coat"><stop stop-color="#5e5d55"/><stop offset=".6" stop-color="#34352f"/><stop offset="1" stop-color="#161a18"/></linearGradient>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".12"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+</defs>
+<rect width="900" height="1200" fill="url(#bg)"/>
+<g filter="url(#grain)" transform="translate(15,0)">
+<path d="M100 1200V1020Q140 850 330 818L355 720H550L575 818Q765 840 825 1020V1200Z" fill="url(#coat)"/>
+<path d="M347 690L340 850Q448 960 565 845L553 683" fill="url(#skin)"/>
+<path d="M240 558Q168 330 261 210Q342 118 478 148Q650 140 681 290Q734 410 663 629L603 675L289 680Z" fill="#a6a59d"/>
+<ellipse cx="267" cy="503" rx="37" ry="70" fill="#99998e"/><ellipse cx="626" cy="503" rx="32" ry="65" fill="#686c62"/>
+<path d="M271 363Q265 204 444 199Q627 198 628 369L615 574Q596 714 461 771Q322 736 278 583Z" fill="url(#skin)"/>
+<path d="M266 430Q215 267 327 211Q370 132 499 175Q636 166 650 344L623 425L590 301Q499 249 450 263Q358 305 302 303Z" fill="#d1d0c6"/>
+<g fill="none" stroke="#686b60" stroke-linecap="round" stroke-width="5" opacity=".65">
+<path d="M331 348Q418 328 531 350M342 367Q420 349 534 366M326 390Q425 373 548 391"/>
+<path d="M309 457Q353 425 400 453M483 451Q530 423 573 455"/>
+<path d="M306 492Q344 481 382 496M492 495Q533 483 566 498"/>
+<path d="M448 461Q438 530 424 553Q455 577 478 551"/>
+<path d="M321 550Q325 602 352 625M555 545Q549 588 523 617"/>
+<path d="M358 624Q452 654 530 617M380 649Q451 676 502 646"/>
+<path d="M376 709Q449 726 506 704"/>
+<path d="M298 517l-15 9M297 533l-15 15M584 515l18 8M583 532l15 14"/>
+</g>
+<path d="M316 469Q355 446 394 467Q359 485 316 469M490 468Q531 444 569 467Q531 484 490 468" fill="#c6c7bb"/>
+<ellipse cx="359" cy="466" rx="12" ry="13" fill="#383e34"/><ellipse cx="529" cy="465" rx="12" ry="13" fill="#30352f"/>
+<circle cx="362" cy="462" r="3" fill="#eff0e5"/><circle cx="532" cy="461" r="3" fill="#eff0e5"/>
+
+
+<path d="M279 863L432 1070L340 1200H183L150 1030Z" fill="#55574d"/><path d="M590 863L450 1069L562 1200H763L747 1025Z" fill="#65655c"/><path d="M340 850L452 955L565 850L526 1045H387Z" fill="#aba99e"/>
+</g>
+<rect width="900" height="1200" fill="#000" opacity=".08"/>
+</svg>
