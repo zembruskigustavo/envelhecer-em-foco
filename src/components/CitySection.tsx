@@ -73,7 +73,7 @@ export function CitySection() {
           <p>Texto baseado na página oficial, consultada em {city.source.accessedAt}.</p>
         </aside>
         <div className="city-details__actions">
-          <button className="back-button" type="button" onClick={() => setDetailsVisible(false)}><Arrow back />Voltar à fotografia</button>
+          {/**/}<button className="back-button" type="button" onClick={() => setDetailsVisible(false)}><Arrow back />Voltar à fotografia</button>
           <a href="#retratos">Voltar aos retratos<span aria-hidden="true">↑</span></a>
         </div>
       </div>
