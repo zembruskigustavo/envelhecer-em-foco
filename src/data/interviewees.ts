@@ -8,7 +8,7 @@ export const interviewees: Interviewee[] = [
     number: '01',
     name: 'Zélia',
     image: {
-      src: './images/zelia.jpg',
+      src: './images/zeliametade.jpg',
       fallback: './images/retrato-01.svg',
       alt: 'Retrato da participante Zélia.',
       position: '50% 38%',
@@ -44,7 +44,7 @@ export const interviewees: Interviewee[] = [
     number: '02',
     name: 'Jaime',
     image: {
-      src: './images/jaime.jpg',
+      src: './images/jaimemetade.jpg',
       fallback: './images/retrato-02.svg',
       alt: 'Fotografia demonstrativa de um homem idoso. Não representa um participante da pesquisa.',
       position: '50% 40%',
@@ -65,7 +65,7 @@ export const interviewees: Interviewee[] = [
     number: '03',
     name: 'Dorotilde',
     image: {
-      src: './images/dorotilde.jpg',
+      src: './images/dorotildemetade.jpg',
       fallback: './images/retrato-03.svg',
       alt: 'Fotografia demonstrativa de uma mulher idosa. Não representa uma participante da pesquisa.',
       position: '50% 35%',
@@ -86,7 +86,7 @@ export const interviewees: Interviewee[] = [
     number: '04',
     name: 'Luiz',
     image: {
-      src: './images/luiz.jpg',
+      src: './images/luizmetade.jpg',
       fallback: './images/retrato-04.svg',
       alt: 'Fotografia demonstrativa de um homem idoso com chapéu. Não representa um participante da pesquisa.',
       position: '50% 40%',
