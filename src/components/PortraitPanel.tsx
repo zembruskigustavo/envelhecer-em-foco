@@ -25,7 +25,7 @@ export function PortraitPanel({ person, selectedId, onSelect, buttonRef }: {
       <PortraitImage person={person} className="portrait-panel__image" decorative eager />
       <span className="portrait-panel__shade" />
       <span className="portrait-panel__caption">
-        <span className="portrait-panel__number">{person.number}<span className="portrait-panel__rule" /></span>
+      <span className="portrait-panel__rule" />
         <span className="portrait-panel__name">{person.name}</span>
         <span className="portrait-panel__action">Conheça a história <Arrow /></span>
       </span>

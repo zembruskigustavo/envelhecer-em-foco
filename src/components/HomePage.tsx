@@ -15,7 +15,7 @@ export function HomePage() {
   const storyHeading = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    document.title = person ? person.name + ' — Envelhecer em Foco' : 'Envelhecer em Foco — histórias que permanecem';
+    document.title = person ? person.name + ' — Envelhecer' : 'Envelhecer — histórias que permanecem';
     if (person) {
       lastSelected.current = person.id;
       storyHeading.current?.focus({ preventScroll: true });
@@ -37,13 +37,13 @@ export function HomePage() {
     <>
       <a className="skip-link" href={person ? '#narrativa' : '#retratos'}>{person ? 'Pular para a narrativa' : 'Pular para os retratos'}</a>
       <main className={'experience' + (person ? ' experience--story' : '')}>
-        <section className="stage" id="retratos" aria-label={person ? 'Apresentação da história' : 'Envelhecer em Foco'}>
+        <section className="stage" id="retratos" aria-label={person ? 'Apresentação da história' : 'Envelhecer'}>
           <PortraitGallery people={interviewees} selectedId={selectedId} onSelect={navigate} getButtonRef={(id) => (node) => { if (node) portraitButtons.current.set(id, node); else portraitButtons.current.delete(id); }} />
           <div className="home-content" aria-hidden={!!person} inert={!!person}>
-            <header className="home-topline"><span className="project-mark"><span className="frame-mark" aria-hidden="true" />Um projeto documental</span><span>Chapecó · Santa Catarina</span></header>
+            <header className="home-topline"><span className="project-mark"><span className="frame-mark" aria-hidden="true" />Fotodocumentário</span><span>Chapecó · Santa Catarina</span></header>
             <div className="home-title">
               <p className="home-title__intro">Quatro vidas. Um tempo de escuta.</p>
-              <h1>ENVELHECER<span>EM FOCO</span></h1>
+              <h1>ENVELHECER<span></span></h1>
             </div>
             <footer className="home-bottomline">
               <p>Selecione um retrato<br className="mobile-break" /> para conhecer sua história<span className="small-cross" aria-hidden="true">+</span></p>
@@ -54,7 +54,7 @@ export function HomePage() {
             <header className="story-intro" key={person.id}>
               <BackButton onBack={() => navigate(null)} />
               <div className="story-intro__body">
-                <p className="eyebrow">Envelhecer em Foco <span>História {person.number} / 04</span></p>
+                <p className="eyebrow">Envelhecer<span>História {person.number} / 04</span></p>
                 {person.isDemo && <p className="demo-label">Nome, imagem e texto demonstrativos</p>}
                 <h1 ref={storyHeading} tabIndex={-1}>{person.name}</h1>
                 <div className="story-intro__quote">
