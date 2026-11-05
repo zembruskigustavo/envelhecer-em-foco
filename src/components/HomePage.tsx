@@ -32,7 +32,6 @@ export function HomePage() {
     return () => window.removeEventListener('keydown', onKey);
   }, [selectedId, navigate]);
 
-  const hasDemo = interviewees.some((item) => item.isDemo);
   return (
     <>
       <a className="skip-link" href={person ? '#narrativa' : '#retratos'}>{person ? 'Pular para a narrativa' : 'Pular para os retratos'}</a>

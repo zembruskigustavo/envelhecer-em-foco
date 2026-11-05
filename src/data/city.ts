@@ -5,12 +5,11 @@ export const city = {
   introduction:
     'Em Chapecó, um espaço público de convivência e atividades para pessoas com 60 anos ou mais.',
   image: {
-    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpbwyVp4L2qpqnIhFVJBz4UyrRcynXTjIdNi4DK89q4Y0vpBIp3yihwIc&s=10',
-    alt: 'Cidade do Idoso, em Chapecó, em imagem publicada pela Prefeitura.',
-    credit: 'Prefeitura de Chapecó',
-    source: 'https://www.chapeco.sc.gov.br/conteudo/502/cidade-do-idoso',
-    // A publicação indicada não ficou acessível durante a implementação.
-    requestedSource: 'https://www.instagram.com/p/DWW3jYZkczw/',
+    src: './images/cidadedoidoso.jpg',
+    alt: 'Cidade do Idoso, em Chapecó.',
+    credit: 'Emily Gilioli / Unochapecó',
+    source: './images/cidadedoidoso.jpg',
+    //requestedSource: 'https://www.instagram.com/p/DWW3jYZkczw/',
   },
   sections: [
     {

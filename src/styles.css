@@ -220,11 +220,12 @@ p, h1, h2, blockquote { margin: 0; }
 /* A segunda entrada da exposição: o lugar que reúne as quatro histórias. */
 .city-section { background: var(--paper-light); scroll-margin-top: 0; }
 .city-cover { position: relative; height: 100svh; min-height: 560px; overflow: hidden; isolation: isolate; color: var(--paper-light); background: #343b31; }
-.city-cover__image { position: absolute; inset: 0; z-index: -2; filter: grayscale(1); transform: scale(1.005); transition: transform 1000ms var(--ease); }
+.city-cover__image { position: absolute; inset: 0; z-index: -2; transform: scale(1.005); transition: transform 1000ms var(--ease); }
 .city-cover__shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #10170fc0 0%, #10170f20 25%, #10170f85 55%, #10170fe0 100%); }
-.city-cover__copy { position: absolute; left: clamp(24px, 8vw, 150px); right: var(--gutter); bottom: clamp(80px, 12vh, 150px); max-width: 900px; }
+.city-cover__copy { position: absolute; left: clamp(24px, 8vw, 150px); right: var(--gutter); bottom: clamp(80px, 12vh, 150px); max-width: 900px; isolation: isolate; }
+.city-cover__copy::before { content: ''; position: absolute; inset: -60px -80px; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 30% 50%, #10170fbf 0%, #10170f8c 48%, #10170f00 78%); }
 .city-cover__kicker { margin-bottom: 22px; font: italic 400 clamp(20px, 2.2vw, 28px)/1.3 var(--serif); letter-spacing: -.015em; color: #f0e8db; text-shadow: 0 2px 14px #0008; }
-.city-cover h2 { font: 400 clamp(72px, 10vw, 170px)/.88 var(--serif); letter-spacing: -.055em; }
+.city-cover h2 { font: 400 clamp(72px, min(10vw, 17svh), 170px)/1.08 var(--serif); letter-spacing: -.02em; }
 .city-cover h2 span { display: block; font-style: italic; color: var(--copper); margin-top: 8px; }
 .city-cover__description { max-width: 440px; margin-top: 26px; font: 400 clamp(18px, 1.7vw, 22px)/1.55 var(--serif); letter-spacing: -.01em; color: #f4efe5; text-shadow: 0 2px 14px #0008; }
 .city-cover__action { display: inline-flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 100%; min-height: 50px; margin-top: 23px; padding: 4px 0; border: 0; background: none; color: var(--paper-light); font-size: 14px; font-weight: 500; line-height: 1.5; text-align: left; text-decoration: none; transition: color 250ms; }
@@ -275,6 +276,7 @@ p, h1, h2, blockquote { margin: 0; }
 @media (max-width: 700px) {
   .city-cover { min-height: 560px; }
   .city-cover__copy { left: var(--gutter); bottom: 65px; }
+  .city-cover__copy::before { inset: -36px -40px; }
   .city-cover__kicker { font-size: 22px; margin-bottom: 16px; }
   .city-cover h2 { font-size: clamp(66px, 18vw, 120px); }
   .city-cover__description { font-size: 18px; max-width: 330px; margin-top: 22px; line-height: 1.5; }
