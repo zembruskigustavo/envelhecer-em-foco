@@ -42,11 +42,11 @@ export function HomePage() {
           <div className="home-content" aria-hidden={!!person} inert={!!person}>
             <header className="home-topline"><span className="project-mark"><span className="frame-mark" aria-hidden="true" />Fotodocumentário</span><span>Chapecó · Santa Catarina</span></header>
             <div className="home-title">
-              <p className="home-title__intro">Quatro vidas. Um tempo de escuta.</p>
+              <p className="home-title__intro">Histórias traçadas pelo</p>
               <h1>ENVELHECER<span></span></h1>
             </div>
             <footer className="home-bottomline">
-              <p>Selecione um retrato<br className="mobile-break" /> para conhecer sua história<span className="small-cross" aria-hidden="true">+</span></p>
+              <p>Selecione um retrato<br className="mobile-break" /> para conhecer sua história</p>
               <span>{hasDemo ? 'Protótipo · imagens e conteúdo demonstrativos' : 'Histórias da Cidade do Idoso'}</span>
             </footer>
           </div>
@@ -54,7 +54,7 @@ export function HomePage() {
             <header className="story-intro" key={person.id}>
               <BackButton onBack={() => navigate(null)} />
               <div className="story-intro__body">
-                <p className="eyebrow">Envelhecer<span>História {person.number} / 04</span></p>
+                <p className="eyebrow">Envelhecer</p>
                 {person.isDemo && <p className="demo-label">Nome, imagem e texto demonstrativos</p>}
                 <h1 ref={storyHeading} tabIndex={-1}>{person.name}</h1>
                 <div className="story-intro__quote">

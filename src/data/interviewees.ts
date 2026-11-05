@@ -5,10 +5,10 @@ import type { Interviewee } from '../types';
 export const interviewees: Interviewee[] = [
   {
     id: 'retrato-01',
-    number: '01',
     name: 'Zélia',
     image: {
-      src: './images/zeliametade.jpg',
+      src: './public/images/zelia.jpg',
+      gallerySrc: './images/zeliametade.jpg',
       fallback: './images/retrato-01.svg',
       alt: 'Retrato da participante Zélia.',
       position: '50% 38%',
@@ -41,10 +41,10 @@ export const interviewees: Interviewee[] = [
   },
   {
     id: 'jaime-02',
-    number: '02',
     name: 'Jaime',
     image: {
-      src: './images/jaimemetade.jpg',
+      src: './public/images/jaimerecortecolorida.jpg',
+      gallerySrc: './images/jaimemetade.jpg',
       fallback: './images/retrato-02.svg',
       alt: 'Fotografia demonstrativa de um homem idoso. Não representa um participante da pesquisa.',
       position: '50% 40%',
@@ -62,10 +62,10 @@ export const interviewees: Interviewee[] = [
   },
   {
     id: 'dorotilde-03',
-    number: '03',
     name: 'Dorotilde',
     image: {
-      src: './images/dorotildemetade.jpg',
+      src: './public/images/dorotilde.jpg',
+      gallerySrc: './images/dorotildemetade.jpg',
       fallback: './images/retrato-03.svg',
       alt: 'Fotografia demonstrativa de uma mulher idosa. Não representa uma participante da pesquisa.',
       position: '50% 35%',
@@ -83,10 +83,10 @@ export const interviewees: Interviewee[] = [
   },
   {
     id: 'luiz-04',
-    number: '04',
     name: 'Luiz',
     image: {
-      src: './images/luizmetade.jpg',
+      src: './public/images/luiz.jpg',
+      gallerySrc: './images/luizmetade.jpg',
       fallback: './images/retrato-04.svg',
       alt: 'Fotografia demonstrativa de um homem idoso com chapéu. Não representa um participante da pesquisa.',
       position: '50% 40%',

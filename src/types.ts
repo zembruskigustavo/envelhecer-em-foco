@@ -6,10 +6,10 @@ export interface NarrativeSection {
 
 export interface Interviewee {
   id: string;
-  number: string;
   name: string;
   image: {
     src: string;
+    gallerySrc: string;
     fallback: string;
     alt: string;
     position: string;

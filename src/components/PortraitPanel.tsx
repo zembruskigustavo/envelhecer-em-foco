@@ -20,12 +20,11 @@ export function PortraitPanel({ person, selectedId, onSelect, buttonRef }: {
       tabIndex={inStory ? -1 : 0}
       disabled={inStory}
       aria-hidden={inStory}
-      data-number={person.number}
     >
-      <PortraitImage person={person} className="portrait-panel__image" decorative eager />
+      <PortraitImage person={person} variant={isSelected ? 'full' : 'gallery'} className="portrait-panel__image" decorative eager />
       <span className="portrait-panel__shade" />
       <span className="portrait-panel__caption">
-      <span className="portrait-panel__rule" />
+        <span className="portrait-panel__rule" />
         <span className="portrait-panel__name">{person.name}</span>
         <span className="portrait-panel__action">Conheça a história <Arrow /></span>
       </span>

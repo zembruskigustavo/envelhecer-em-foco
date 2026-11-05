@@ -98,12 +98,12 @@ envelhecer-em-foco/
 Edite somente `src/data/interviewees.ts` para alterar os quatro participantes:
 
 - `id`: identificador do link; mantenha estável depois de compartilhar.
-- `number`: numeração editorial.
 - `name`: nome da pessoa entrevistada.
-- `image.src`: caminho ou URL da fotografia.
+- `image.src`: caminho ou URL da fotografia completa, usada ao abrir a história e nas sugestões de outras histórias.
+- `image.gallerySrc`: caminho ou URL do recorte usado na galeria inicial.
 - `image.fallback`: imagem alternativa local.
 - `image.alt`: descrição acessível da fotografia.
-- `image.position`: posição do enquadramento, por exemplo `50% 35%`.
+- `image.position`: ponto de referência do enquadramento, por exemplo `50% 35%`. Ao abrir a história, a fotografia original se ajusta às dimensões do painel, preenchendo-o sem margens e preservando suas proporções.
 - `image.credit` e `image.source`: autoria e origem da fotografia.
 - `quote`: frase transcrita da entrevista.
 - `introduction`: apresentação da pessoa.

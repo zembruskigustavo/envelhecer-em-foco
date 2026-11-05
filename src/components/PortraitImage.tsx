@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import type { Interviewee } from '../types';
 
-export function PortraitImage({ person, className = '', decorative = false, eager = false }: {
-  person: Interviewee; className?: string; decorative?: boolean; eager?: boolean;
+export function PortraitImage({ person, variant = 'full', className = '', decorative = false, eager = false }: {
+  person: Interviewee; variant?: 'gallery' | 'full'; className?: string; decorative?: boolean; eager?: boolean;
 }) {
-  const [failed, setFailed] = useState(false);
+  const src = variant === 'gallery' ? person.image.gallerySrc : person.image.src;
+  const [failedSrc, setFailedSrc] = useState<string | null>(null);
+  const failed = failedSrc === src;
   return (
     <img
       className={className}
-      src={failed ? person.image.fallback : person.image.src}
+      src={failed ? person.image.fallback : src}
       alt={decorative ? '' : failed
         ? 'Ilustração provisória de um rosto, usada enquanto a fotografia demonstrativa está indisponível.'
         : person.image.alt}
@@ -17,7 +19,7 @@ export function PortraitImage({ person, className = '', decorative = false, eage
       height="1200"
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
-      onError={() => { if (!failed) setFailed(true); }}
+      onError={() => { if (!failed) setFailedSrc(src); }}
     />
   );
 }

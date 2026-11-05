@@ -10,7 +10,7 @@ export function StoryView({ person, people, onSelect, onBack }: {
   return (
     <article className="story-view" aria-label={'Narrativa de ' + person.name}>
       <div className="story-content">
-        <div className="story-content__eyebrow"><span>Uma vida, muitos capítulos</span><span>História {person.number} / 04</span></div>
+        <div className="story-content__eyebrow"><span>Uma vida, muitos capítulos</span></div>
         {person.sections.map((section, index) => <StorySection key={person.id + section.id} section={section} index={index} isDemo={person.isDemo} />)}
       </div>
       <footer className="story-footer">
@@ -22,7 +22,7 @@ export function StoryView({ person, people, onSelect, onBack }: {
           {people.filter((item) => item.id !== person.id).map((other) => (
             <button className="other-story" key={other.id} onClick={() => onSelect(other.id)}>
               <span className="other-story__photo"><PortraitImage person={other} decorative /></span>
-              <span className="other-story__text"><span className="eyebrow">História {other.number}</span><span>{other.name}</span><span className="other-story__hint">Conheça a história <Arrow /></span></span>
+              <span className="other-story__text"><span className="other-story__name">{other.name}</span><span className="other-story__hint">Conheça a história <Arrow /></span></span>
             </button>
           ))}
         </nav>
