@@ -47,7 +47,7 @@ export function HomePage() {
             </div>
             <footer className="home-bottomline">
               <p>Selecione um retrato<br className="mobile-break" /> para conhecer sua história</p>
-              <span>{hasDemo ? 'Protótipo · imagens e conteúdo demonstrativos' : 'Histórias da Cidade do Idoso'}</span>
+              <span>Histórias da Cidade do Idoso</span>
             </footer>
           </div>
           {person && (

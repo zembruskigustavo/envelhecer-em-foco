@@ -61,6 +61,13 @@ p, h1, h2, blockquote { margin: 0; }
 .home-bottomline { position: absolute; bottom: 27px; left: var(--gutter); right: var(--gutter); display: flex; justify-content: space-between; align-items: end; gap: 25px; font-size: 10px; letter-spacing: .025em; line-height: 1.6; }
 .home-bottomline p { display: flex; align-items: center; gap: 22px; font-size: 11px; }
 .home-bottomline > span { max-width: 210px; text-align: right; color: #dfd8ce; }
+.home-scroll-cue { display: flex; align-items: center; gap: 10px; }
+.home-scroll-cue > span { min-width: 0; }
+.home-scroll-cue .arrow { width: 22px; height: 22px; flex: 0 0 22px; color: var(--paper-light); transform: rotate(90deg); animation: scroll-cue 2.8s ease-in-out infinite; }
+@keyframes scroll-cue {
+  0%, 15%, 55%, 100% { transform: translateY(0) rotate(90deg); }
+  35% { transform: translateY(5px) rotate(90deg); }
+}
 .small-cross { font-size: 26px; font-weight: 200; line-height: 1; color: var(--copper); }
 .mobile-break { display: none; }
 .experience--story .stage { background: var(--paper); }
@@ -83,7 +90,7 @@ p, h1, h2, blockquote { margin: 0; }
 .story-intro h1:focus { outline: none; }
 .story-intro__quote { margin-top: 34px; padding-left: 20px; border-left: 1px solid var(--copper-dark); }
 .story-intro__quote .eyebrow { color: var(--copper-dark); font-size: 9px; letter-spacing: .09em; }
-.story-intro__quote blockquote, .quote-placeholder { font: italic 400 clamp(22px, 2vw, 32px)/1.4 var(--serif); margin-top: 10px; }
+.story-intro__quote blockquote, .quote-placeholder { font: italic 400 clamp(30px, 2vw, 32px)/1.4 var(--serif); margin-top: 10px; }
 .story-intro__description { margin-top: 25px; font-size: 14px; line-height: 1.85; max-width: 470px; color: #5c584f; }
 .reading-link { display: inline-flex; align-items: center; gap: 28px; min-height: 44px; margin-top: 20px; font-size: 11px; text-decoration: none; border-bottom: 1px solid var(--ink); }
 .reading-link span { font-size: 23px; }

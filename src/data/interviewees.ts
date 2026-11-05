@@ -15,7 +15,7 @@ export const interviewees: Interviewee[] = [
       credit: 'Emily Gilioli / Unochapecó',
       source: 'https://unsplash.com/photos/l9I93gZKTG4',
     },
-    quote: '[Uma frase da entrevista será inserida aqui.]',
+    quote: '"É o processo da vida. Nós estamos aqui só de passagem."',
     introduction: '[Conteúdo demonstrativo] Este espaço receberá a apresentação da primeira pessoa entrevistada, com informações verificadas a partir da pesquisa.',
     sections: [
       {
@@ -51,7 +51,7 @@ export const interviewees: Interviewee[] = [
       credit: 'Rafael Leão / Unsplash',
       source: 'https://unsplash.com/photos/NRnPv3Gs-Nc',
     },
-    quote: '[Espaço reservado para uma frase da segunda entrevista.]',
+    quote: '"A velhice é boa, mas tem que saber viver."',
     introduction: '[Conteúdo demonstrativo] Esta será a apresentação da segunda pessoa entrevistada. Nome, fotografia e texto serão substituídos pelos materiais do projeto.',
     sections: [
       { id: 'origens', title: 'Lugares de origem', paragraphs: ['Conteúdo demonstrativo. Este espaço poderá apresentar as origens da pessoa entrevistada e suas lembranças dos lugares em que viveu.'] },
@@ -72,7 +72,7 @@ export const interviewees: Interviewee[] = [
       credit: 'Michael Thomson / Unsplash',
       source: 'https://unsplash.com/photos/exSbVjfRXTo',
     },
-    quote: '[Uma passagem marcante da terceira entrevista entrará aqui.]',
+    quote: '"Não sinto a idade que tenho."',
     introduction: '[Conteúdo demonstrativo] Esta introdução será dedicada à terceira pessoa entrevistada e ao contexto de sua participação no projeto.',
     sections: [
       { id: 'lembrancas', title: 'O que a memória guarda', paragraphs: ['Conteúdo demonstrativo. Espaço reservado às lembranças escolhidas pela pessoa entrevistada.'] },
@@ -93,7 +93,7 @@ export const interviewees: Interviewee[] = [
       credit: 'Ricardo Alfaro / Unsplash',
       source: 'https://unsplash.com/photos/MeU7XG3HOes',
     },
-    quote: '[Uma frase da quarta entrevista será acrescentada aqui.]',
+    quote: '"Seja verdadeiro, aceite a realidade e não acredite em todos que falam contigo."',
     introduction: '[Conteúdo demonstrativo] Espaço de apresentação da quarta pessoa entrevistada. O texto final acompanhará a fotografia e o relato reais.',
     sections: [
       { id: 'comeco', title: 'O começo do caminho', paragraphs: ['Conteúdo demonstrativo. Este capítulo será desenvolvido com as primeiras lembranças compartilhadas pelo entrevistado.'] },
