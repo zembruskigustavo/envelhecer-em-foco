@@ -11,15 +11,12 @@ export interface Interviewee {
   image: {
     src: string;
     gallerySrc: string;
-    fallback: string;
     alt: string;
     position: string;
     credit: string;
     source: string;
   };
   quote: string;
-  introduction: string;
+  introduction?: string;
   sections: NarrativeSection[];
-  // Alterar para false somente quando todo o conteúdo tiver sido substituído.
-  isDemo: boolean;
 }

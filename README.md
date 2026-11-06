@@ -1,143 +1,144 @@
 # Envelhecer em Foco
 
-Protótipo de uma exposição documental interativa para um TCC sobre quatro pessoas entrevistadas na Cidade do Idoso, em Chapecó, SC.
+Fotodocumentário interativo de Emily Gilioli, desenvolvido para o Trabalho de Conclusão de Curso da graduação em Jornalismo da Unochapecó. O projeto apresenta retratos e falas de quatro pessoas entrevistadas na Cidade do Idoso, em Chapecó, Santa Catarina.
+
+Todas as fotografias são de **Emily Gilioli** e integram o acervo local do projeto.
+
+## Participantes
+
+- Zélia Deola Kuhn
+- Jaime Constante Zuffo
+- Dorotilde Bernardes
+- Luiz Fernando Costa
+
+## Experiência
+
+- Galeria com quatro retratos lado a lado no computador e grade de dois por dois no celular.
+- Retratos recortados na página inicial e fotografias completas como fonte das histórias expandidas.
+- Ajuste das imagens ao painel, preservando a proporção e preenchendo a área sem margens.
+- Nome completo e frase da entrevista na apresentação de cada participante.
+- Apresentação e três capítulos por participante, com espaços reservados para os textos das histórias.
+- Navegação entre histórias, retorno à galeria e suporte ao histórico do navegador.
+- Indicador animado de rolagem na página inicial.
+- Capa da Cidade do Idoso em tela inteira, com apresentação revelada pelo botão “Conhecer a Cidade do Idoso”.
+- Créditos acadêmicos, autoria das fotografias e contatos do projeto.
+
+## Tecnologias
+
+React, TypeScript, Vite e CSS. A aplicação funciona no navegador e utiliza arquivos estáticos para conteúdo e fotografias. A tipografia usa fontes do sistema, incluindo Georgia.
 
 ## Executar localmente
 
-Requisito: Node.js 22.12 ou superior, com npm.
+Requisito: **Node.js 22.12 ou superior**, com npm.
 
-No terminal, dentro da pasta do projeto:
+Na pasta do projeto:
 
 ```powershell
-npm install
+npm ci
 npm run dev
 ```
 
-Abra o endereço informado pelo Vite, normalmente http://127.0.0.1:5173.
+Abra o endereço exibido pelo Vite, normalmente http://127.0.0.1:5173/. Se a porta estiver ocupada, o Vite informará outra.
 
-No PowerShell, se houver uma restrição à execução de npm.ps1, use `npm.cmd install` e `npm.cmd run dev`.
+No PowerShell, caso a execução de `npm.ps1` esteja restrita, utilize `npm.cmd` nos mesmos comandos.
 
-A instalação requer acesso à internet. As fotografias demonstrativas são carregadas do Unsplash; caso não estejam disponíveis, o site usa ilustrações SVG locais. A interface não depende de fontes externas.
+## Comandos
 
-Para conferir a tipagem e gerar a versão de produção:
+| Comando | Função |
+| --- | --- |
+| `npm run dev` | Inicia o servidor de desenvolvimento. |
+| `npm run typecheck` | Verifica os tipos TypeScript. |
+| `npm run build` | Verifica os tipos e gera a versão de produção em `dist/`. |
+| `npm run preview` | Serve localmente a versão compilada. |
+
+## Organização do código
+
+| Caminho | Responsabilidade |
+| --- | --- |
+| `public/images/` | Fotografias originais e recortes do acervo de Emily Gilioli. |
+| `src/components/HomePage.tsx` | Página inicial, apresentação dos participantes e composição das seções. |
+| `src/components/PortraitGallery.tsx` e `PortraitPanel.tsx` | Galeria e seleção dos retratos. |
+| `src/components/PortraitImage.tsx` | Seleção da fotografia conforme a galeria ou a história. |
+| `src/components/StoryView.tsx` e `StorySection.tsx` | Narrativa e navegação entre participantes. |
+| `src/components/CitySection.tsx` | Capa e apresentação da Cidade do Idoso. |
+| `src/components/SiteFooter.tsx` | Créditos e contatos. |
+| `src/data/interviewees.ts` | Identificação dos participantes, fotografias e conteúdo das entrevistas. |
+| `src/data/city.ts` | Apresentação da Cidade do Idoso, fotografia e referência do texto. |
+| `src/data/project.ts` | Créditos acadêmicos e contatos do projeto. |
+| `src/hooks/useStoryNavigation.ts` | Seleção das histórias, links diretos e histórico do navegador. |
+| `src/types.ts` | Tipos dos dados editoriais. |
+| `src/styles.css` | Identidade visual, responsividade e animações. |
+
+## Acervo fotográfico
+
+Os arquivos abaixo ficam em `public/images/`. A autoria de todos eles é de Emily Gilioli.
+
+| Pessoa ou local | Galeria inicial | História ou capa |
+| --- | --- | --- |
+| Zélia Deola Kuhn | `zeliametade.jpg` | `zelia.jpg` |
+| Jaime Constante Zuffo | `jaimemetade.jpg` | `jaimerecortecolorida.jpg` |
+| Dorotilde Bernardes | `dorotildemetade.jpg` | `dorotilde.jpg` |
+| Luiz Fernando Costa | `luizmetade.jpg` | `luiz.jpg` |
+| Cidade do Idoso | — | `cidadedoidoso.jpg` |
+
+O arquivo `jaime.jpg` também pertence ao acervo e é a fotografia original vinculada ao crédito da história de Jaime.
+
+Nas configurações, use caminhos como `./images/zelia.jpg`: o Vite publica o conteúdo de `public/` na raiz do site. Preserve a correspondência entre maiúsculas e minúsculas nos nomes dos arquivos.
+
+## Manutenção do conteúdo
+
+Os dados editoriais ficam separados dos componentes em `src/data/`.
+
+| Campo de participante | Uso |
+| --- | --- |
+| `id` | Identificador usado nos links diretos; preserve-o ao editar o conteúdo. |
+| `name` | Nome curto nos retratos e na navegação. |
+| `fullName` | Nome completo na história, no título da página e nos rótulos acessíveis. |
+| `image.src` | Fotografia da história expandida e das sugestões de outras histórias. |
+| `image.gallerySrc` | Recorte usado na galeria inicial. |
+| `image.alt` | Descrição acessível da fotografia. |
+| `image.position` | Ponto de referência do enquadramento. |
+| `image.credit` | Autoria da fotografia. |
+| `image.source` | Arquivo local aberto pelo link do crédito. |
+| `quote` | Frase da entrevista. |
+| `introduction` | Texto de apresentação, opcional. |
+| `sections` | Capítulos da narrativa, com `id`, `title` e `paragraphs`. |
+
+As fotografias, os nomes e as frases de abertura correspondem aos participantes. Os textos corridos das histórias ainda não foram incluídos: cada participante possui uma apresentação e três capítulos com espaços reservados, explicitamente identificados.
+
+Para inserir os textos editados das entrevistas, substitua o conteúdo de `introduction` e de `sections[].paragraphs` em `src/data/interviewees.ts`. Os títulos e a divisão dos capítulos também podem ser ajustados nesses dados. A apresentação e os capítulos são exibidos somente quando possuem conteúdo.
+
+Os links diretos usam o parâmetro `historia`:
+
+| Participante | Link |
+| --- | --- |
+| Zélia | `?historia=retrato-01` |
+| Jaime | `?historia=jaime-02` |
+| Dorotilde | `?historia=dorotilde-03` |
+| Luiz | `?historia=luiz-04` |
+
+O texto da Cidade do Idoso mantém como referência a [página oficial da Prefeitura de Chapecó](https://www.chapeco.sc.gov.br/conteudo/502/cidade-do-idoso). A referência do texto é independente da autoria das fotografias.
+
+## Acessibilidade
+
+A interface usa HTML semântico, textos alternativos e botões nativos com ativação por Enter e Espaço. A seleção de uma história direciona o foco ao nome do participante; o retorno à galeria restaura o foco no retrato selecionado.
+
+Escape retorna das histórias à galeria e fecha a apresentação da Cidade do Idoso. A preferência `prefers-reduced-motion` desativa animações e rolagem suave, mantendo a seta de continuação estática.
+
+## Compilação e publicação
 
 ```powershell
-npm run typecheck
 npm run build
 npm run preview
 ```
 
-O resultado da compilação fica em `dist/`. Não abra `index.html` diretamente: os arquivos TypeScript e TSX precisam do Vite.
+Publique o conteúdo de `dist/` em uma hospedagem de arquivos estáticos. O projeto usa caminhos relativos, configurados por `base: './'` em `vite.config.ts`. O servidor deve entregar `index.html` como documento inicial e servir os arquivos de `assets/` e `images/` gerados no build.
 
-## Experiência implementada
+## Créditos
 
-- Quatro retratos em painéis verticais no desktop; grade de dois por dois no celular.
-- Título ENVELHECER sobreposto aos retratos, com EM FOCO em segundo plano.
-- Aproximação discreta da fotografia e identificação da história no hover.
-- O painel selecionado se expande e passa a ocupar a área de retrato da história.
-- Apresentação, espaço para frase da entrevista e capítulos de narrativa.
-- Navegação para as outras três histórias.
-- Retorno à galeria com recuperação do foco no retrato anterior.
-- Links diretos por parâmetro, por exemplo `?historia=retrato-02`.
-- Voltar e Avançar do navegador; Escape também retorna à galeria.
-- Botões nativos com ativação por Enter e Espaço, foco visível, atalho para o conteúdo e respeito a `prefers-reduced-motion`.
+- **Projeto jornalístico, entrevistas e fotografias:** [Emily Gilioli](https://www.linkedin.com/in/emily-gilioli/).
+- **Desenvolvimento:** [Gustavo Zembruski](https://github.com/zembruskigustavo).
+- **Vínculo acadêmico:** Trabalho de Conclusão de Curso de Jornalismo da Unochapecó.
+- **Local:** Chapecó, Santa Catarina.
 
-Não foram incluídos backend, autenticação, CMS, áudio, vídeo, linha do tempo ou galerias adicionais.
-
-## Estrutura
-
-A página inicial também inclui a seção **Cidade do Idoso**, com capa de tela inteira. A apresentação fica oculta até a ativação do botão “Conhecer a Cidade do Idoso”, por clique, Enter ou Espaço. O texto aparece abaixo, recebe o foco e é alcançado por rolagem suave, mantendo o tamanho da fotografia. “Voltar à fotografia” ou Escape fecha a apresentação e devolve o foco ao botão. A preferência por movimento reduzido desativa a rolagem animada.
-
-- `src/components/CitySection.tsx`: capa, acesso ao texto e apresentação da Cidade do Idoso.
-- `src/data/city.ts`: resumo da página oficial, fonte, data de consulta e fotografia.
-- `src/components/SiteFooter.tsx`: rodapé compartilhado com créditos acadêmicos e contatos.
-- `src/data/project.ts`: nomes, telefones, perfis do LinkedIn e GitHub do desenvolvedor.
-
-A foto indicada no Instagram não ficou acessível durante o desenvolvimento. A capa usa provisoriamente uma imagem da página oficial da Prefeitura. Para trocar a foto, altere `city.image.src`, a descrição e o crédito em `src/data/city.ts`; uma imagem local pode ser colocada em `public/images/`.
-
-```text
-envelhecer-em-foco/
-├── public/
-│   ├── favicon.svg
-│   └── images/
-│       ├── retrato-01.svg
-│       ├── retrato-02.svg
-│       ├── retrato-03.svg
-│       └── retrato-04.svg
-├── src/
-│   ├── components/
-│   │   ├── Arrow.tsx
-│   │   ├── BackButton.tsx
-│   │   ├── CitySection.tsx
-│   │   ├── HomePage.tsx
-│   │   ├── PortraitGallery.tsx
-│   │   ├── PortraitImage.tsx
-│   │   ├── PortraitPanel.tsx
-│   │   ├── SiteFooter.tsx
-│   │   ├── StorySection.tsx
-│   │   └── StoryView.tsx
-│   ├── data/
-│   │   ├── city.ts
-│   │   ├── interviewees.ts
-│   │   └── project.ts
-│   ├── hooks/
-│   │   └── useStoryNavigation.ts
-│   ├── main.tsx
-│   ├── styles.css
-│   └── types.ts
-├── .gitignore
-├── index.html
-├── package.json
-├── README.md
-├── tsconfig.json
-└── vite.config.ts
-```
-
-## Substituir conteúdo
-
-Edite somente `src/data/interviewees.ts` para alterar os quatro participantes:
-
-- `id`: identificador do link; mantenha estável depois de compartilhar.
-- `name`: nome curto usado nos retratos e na navegação entre histórias.
-- `fullName`: nome completo exibido na história expandida, no título da página e nos rótulos acessíveis.
-- `image.src`: caminho ou URL da fotografia completa, usada ao abrir a história e nas sugestões de outras histórias.
-- `image.gallerySrc`: caminho ou URL do recorte usado na galeria inicial.
-- `image.fallback`: imagem alternativa local.
-- `image.alt`: descrição acessível da fotografia.
-- `image.position`: ponto de referência do enquadramento, por exemplo `50% 35%`. Ao abrir a história, a fotografia original se ajusta às dimensões do painel, preenchendo-o sem margens e preservando suas proporções.
-- `image.credit` e `image.source`: autoria e origem da fotografia.
-- `quote`: frase transcrita da entrevista.
-- `introduction`: apresentação da pessoa.
-- `sections`: capítulos, com título e uma lista de parágrafos.
-- `isDemo`: mantenha `true` enquanto houver conteúdo provisório.
-
-Para usar uma foto local, coloque-a em `public/images/` e use, por exemplo, `src: './images/maria.jpg'`. Prefira WebP ou JPEG otimizado. Atualize a imagem alternativa, o crédito, o enquadramento e os textos junto com a fotografia. Depois de substituir todo o material de uma pessoa, altere seu `isDemo` para `false`.
-
-O layout e a quantidade de capítulos são derivados dos dados, sem duplicar a estrutura dos componentes.
-
-## Identidade e movimento
-
-As variáveis no início de `src/styles.css` controlam cores, fontes, espaçamentos e duração da expansão. Os títulos usam Georgia e os textos usam fontes do sistema.
-
-A galeria permanece montada ao abrir uma história. A largura da galeria e a proporção dos painéis são animadas em CSS; o conteúdo aparece como continuação da composição. Em telas de até 700 px, o retrato ocupa o topo e o texto segue abaixo.
-
-## Material demonstrativo
-
-**Nenhuma fotografia de banco de imagens representa os participantes da pesquisa. Não há nomes, biografias ou depoimentos reais no protótipo.** Os nomes são identificadores provisórios e as frases reservadas não são apresentadas como citações.
-
-Fotografias de demonstração, com links de origem:
-
-1. Danie Franco — https://unsplash.com/photos/l9I93gZKTG4
-2. Rafael Leão — https://unsplash.com/photos/NRnPv3Gs-Nc
-3. Michael Thomson — https://unsplash.com/photos/exSbVjfRXTo
-4. Ricardo Alfaro — https://unsplash.com/photos/MeU7XG3HOes
-
-As quatro ilustrações SVG locais são placeholders gráficos criados para este protótipo.
-
-## Revisão de UX
-
-O título da galeria considera a altura da tela, com espaço reservado antes dos nomes. A capa da Cidade do Idoso traz “O lugar dessas histórias” em itálico acima do título e uma introdução em fonte serifada. O botão não tem moldura e usa uma seta em destaque, com estados de hover e foco visível. A apresentação preserva a divisão em assuntos, sem cabeçalho adicional ou numeração. O rodapé mantém as cores do projeto, com tipografia sem serifa, espaçamentos menores e os links de contato, incluindo o GitHub de Gustavo.
-
-A revisão anterior confirmou ausência de sobreposição entre “Em foco” e os nomes em desktop e celular. Nesta revisão, a capa e o conteúdo foram conferidos em 989 × 572, 1280 × 720, 390 × 844 e 320 × 568, sem rolagem horizontal ou cortes no texto da capa. A apresentação começa oculta; Enter, Espaço e clique a revelam e transferem o foco. O botão de retorno e Escape a fecham e restauram o foco. A fotografia mantém a altura da tela. O endereço do GitHub foi conferido sem abrir páginas externas.
-
-O `typecheck` passou nesta revisão. A compilação de produção continua limitada pelo erro `EPERM` de `realpath` no ambiente do Codex; a prévia já em execução permitiu verificar a interface no navegador.
+Os contatos publicados no rodapé são mantidos em `src/data/project.ts`.

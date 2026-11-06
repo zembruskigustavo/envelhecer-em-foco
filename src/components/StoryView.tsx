@@ -9,10 +9,10 @@ export function StoryView({ person, people, onSelect, onBack }: {
 }) {
   return (
     <article className="story-view" aria-label={'Narrativa de ' + person.fullName}>
-      <div className="story-content">
+      {person.sections.length > 0 && <div className="story-content">
         <div className="story-content__eyebrow"><span>Uma vida, muitos capítulos</span></div>
-        {person.sections.map((section, index) => <StorySection key={person.id + section.id} section={section} index={index} isDemo={person.isDemo} />)}
-      </div>
+        {person.sections.map((section, index) => <StorySection key={person.id + section.id} section={section} index={index} />)}
+      </div>}
       <footer className="story-footer">
         <div className="story-footer__heading">
           <p className="eyebrow">Continue a escuta</p>

@@ -84,13 +84,11 @@ p, h1, h2, blockquote { margin: 0; }
 .story-intro__body { width: 100%; max-width: 650px; margin: auto; padding: 36px 0; }
 .eyebrow { font-size: 10px; font-weight: 400; letter-spacing: .15em; line-height: 1.7; text-transform: uppercase; }
 .story-intro__body > .eyebrow { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
-.demo-label { display: inline-block; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--copper-dark); line-height: 1.7; }
-.story-intro__body > .demo-label { margin-top: 20px; }
 .story-intro h1 { font: 400 clamp(42px, 4.7vw, 84px)/1.07 var(--serif); letter-spacing: -.045em; margin-top: 18px; max-width: 600px; overflow-wrap: break-word; text-wrap: balance; }
 .story-intro h1:focus { outline: none; }
 .story-intro__quote { margin-top: 34px; padding-left: 20px; border-left: 1px solid var(--copper-dark); }
 .story-intro__quote .eyebrow { color: var(--copper-dark); font-size: 9px; letter-spacing: .09em; }
-.story-intro__quote blockquote, .quote-placeholder { font: italic 400 clamp(30px, 2vw, 32px)/1.4 var(--serif); margin-top: 10px; }
+.story-intro__quote blockquote { font: italic 400 clamp(30px, 2vw, 32px)/1.4 var(--serif); margin-top: 10px; }
 .story-intro__description { margin-top: 25px; font-size: 14px; line-height: 1.85; max-width: 470px; color: #5c584f; }
 .reading-link { display: inline-flex; align-items: center; gap: 28px; min-height: 44px; margin-top: 20px; font-size: 11px; text-decoration: none; border-bottom: 1px solid var(--ink); }
 .reading-link span { font-size: 23px; }
@@ -107,7 +105,6 @@ p, h1, h2, blockquote { margin: 0; }
 .story-section__label span:first-child { font: 400 40px/1 var(--serif); }
 .story-section__label span:last-child { font-size: 9px; text-transform: uppercase; letter-spacing: .16em; }
 .story-section__body h2 { font: 400 clamp(29px,3vw,43px)/1.14 var(--serif); letter-spacing: -.035em; margin-bottom: 17px; }
-.story-section__body .demo-label { margin-bottom: 16px; }
 .story-section__body p { font-size: 16px; line-height: 1.95; color: #565247; }
 .story-section__body p + p { margin-top: 20px; }
 .story-footer { background: #25251f; color: var(--paper); padding: 64px var(--gutter) 28px; }
@@ -190,7 +187,7 @@ p, h1, h2, blockquote { margin: 0; }
   .story-intro h1 { font-size: clamp(42px,11vw,68px); max-width: 500px; margin-top: 16px; }
   .story-intro__body > .eyebrow { font-size: 9px; }
   .story-intro__quote { margin-top: 30px; }
-  .quote-placeholder, .story-intro__quote blockquote { font-size: 26px; }
+  .story-intro__quote blockquote { font-size: 26px; }
   .story-intro__description { max-width: none; font-size: 14px; }
   .photo-credit { font-size: 9px; }
   .story-content { padding-top: 45px; padding-bottom: 50px; }

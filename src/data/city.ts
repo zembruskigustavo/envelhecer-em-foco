@@ -7,9 +7,8 @@ export const city = {
   image: {
     src: './images/cidadedoidoso.jpg',
     alt: 'Cidade do Idoso, em Chapecó.',
-    credit: 'Emily Gilioli / Unochapecó',
+    credit: 'Emily Gilioli',
     source: './images/cidadedoidoso.jpg',
-    //requestedSource: 'https://www.instagram.com/p/DWW3jYZkczw/',
   },
   sections: [
     {

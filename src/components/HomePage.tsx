@@ -11,6 +11,7 @@ import { SiteFooter } from './SiteFooter';
 export function HomePage() {
   const { selectedId, navigate } = useStoryNavigation();
   const person = interviewees.find((item) => item.id === selectedId);
+  const hasNarrative = Boolean(person?.sections.length);
   const portraitButtons = useRef(new Map<string, HTMLButtonElement>());
   const lastSelected = useRef<string | null>(null);
   const storyHeading = useRef<HTMLHeadingElement>(null);
@@ -35,7 +36,7 @@ export function HomePage() {
 
   return (
     <>
-      <a className="skip-link" href={person ? '#narrativa' : '#retratos'}>{person ? 'Pular para a narrativa' : 'Pular para os retratos'}</a>
+      <a className="skip-link" href={person ? '#narrativa' : '#retratos'}>{person ? (hasNarrative ? 'Pular para a narrativa' : 'Pular para outras histórias') : 'Pular para os retratos'}</a>
       <main className={'experience' + (person ? ' experience--story' : '')}>
         <section className="stage" id="retratos" aria-label={person ? 'Apresentação da história' : 'Envelhecer'}>
           <PortraitGallery people={interviewees} selectedId={selectedId} onSelect={navigate} getButtonRef={(id) => (node) => { if (node) portraitButtons.current.set(id, node); else portraitButtons.current.delete(id); }} />
@@ -55,16 +56,15 @@ export function HomePage() {
               <BackButton onBack={() => navigate(null)} />
               <div className="story-intro__body">
                 <p className="eyebrow">Envelhecer</p>
-                {person.isDemo && <p className="demo-label">Nome, imagem e texto demonstrativos</p>}
                 <h1 ref={storyHeading} tabIndex={-1}>{person.fullName}</h1>
                 <div className="story-intro__quote">
-                  <p className="eyebrow">{person.isDemo ? 'Espaço para uma frase da entrevista' : 'Em suas palavras'}</p>
-                  {person.isDemo ? <p className="quote-placeholder">{person.quote}</p> : <blockquote>{person.quote}</blockquote>}
+                  <p className="eyebrow">Em suas palavras</p>
+                  <blockquote>{person.quote}</blockquote>
                 </div>
-                <p className="story-intro__description">{person.introduction}</p>
-                <a className="reading-link" href="#narrativa">Percorra a história <span aria-hidden="true">↓</span></a>
+                {person.introduction && <p className="story-intro__description">{person.introduction}</p>}
+                {hasNarrative && <a className="reading-link" href="#narrativa">Percorra a história <span aria-hidden="true">↓</span></a>}
               </div>
-              <p className="photo-credit">{person.isDemo ? 'Imagem ilustrativa · não retrata participante da pesquisa. ' : 'Fotografia: '}<a href={person.image.source} target="_blank" rel="noreferrer">{person.image.credit}</a></p>
+              <p className="photo-credit">Fotografia: <a href={person.image.source} target="_blank" rel="noreferrer">{person.image.credit}</a></p>
             </header>
           )}
         </section>
