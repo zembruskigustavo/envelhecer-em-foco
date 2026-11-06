@@ -6,11 +6,12 @@ export const interviewees: Interviewee[] = [
   {
     id: 'retrato-01',
     name: 'Zélia',
+    fullName: 'Zélia Deola Kuhn',
     image: {
       src: './public/images/zelia.jpg',
       gallerySrc: './images/zeliametade.jpg',
       fallback: './images/retrato-01.svg',
-      alt: 'Retrato da participante Zélia.',
+      alt: 'Retrato da participante Zélia Deola Kuhn.',
       position: '50% 38%',
       credit: 'Emily Gilioli / Unochapecó',
       source: 'https://unsplash.com/photos/l9I93gZKTG4',
@@ -42,11 +43,12 @@ export const interviewees: Interviewee[] = [
   {
     id: 'jaime-02',
     name: 'Jaime',
+    fullName: 'Jaime Constante Zuffo',
     image: {
       src: './public/images/jaimerecortecolorida.jpg',
       gallerySrc: './images/jaimemetade.jpg',
       fallback: './images/retrato-02.svg',
-      alt: 'Fotografia demonstrativa de um homem idoso. Não representa um participante da pesquisa.',
+      alt: 'Retrato do participante Jaime Constante Zuffo.',
       position: '50% 40%',
       credit: 'Rafael Leão / Unsplash',
       source: 'https://unsplash.com/photos/NRnPv3Gs-Nc',
@@ -63,11 +65,12 @@ export const interviewees: Interviewee[] = [
   {
     id: 'dorotilde-03',
     name: 'Dorotilde',
+    fullName: 'Dorotilde Bernardes',
     image: {
       src: './public/images/dorotilde.jpg',
       gallerySrc: './images/dorotildemetade.jpg',
       fallback: './images/retrato-03.svg',
-      alt: 'Fotografia demonstrativa de uma mulher idosa. Não representa uma participante da pesquisa.',
+      alt: 'Retrato da participante Dorotilde Bernardes.',
       position: '50% 35%',
       credit: 'Michael Thomson / Unsplash',
       source: 'https://unsplash.com/photos/exSbVjfRXTo',
@@ -84,11 +87,12 @@ export const interviewees: Interviewee[] = [
   {
     id: 'luiz-04',
     name: 'Luiz',
+    fullName: 'Luiz Fernando Costa',
     image: {
       src: './public/images/luiz.jpg',
       gallerySrc: './images/luizmetade.jpg',
       fallback: './images/retrato-04.svg',
-      alt: 'Fotografia demonstrativa de um homem idoso com chapéu. Não representa um participante da pesquisa.',
+      alt: 'Retrato do participante Luiz Fernando Costa.',
       position: '50% 40%',
       credit: 'Ricardo Alfaro / Unsplash',
       source: 'https://unsplash.com/photos/MeU7XG3HOes',

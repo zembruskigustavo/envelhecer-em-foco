@@ -4,6 +4,7 @@ import { useStoryNavigation } from '../hooks/useStoryNavigation';
 import { PortraitGallery } from './PortraitGallery';
 import { StoryView } from './StoryView';
 import { BackButton } from './BackButton';
+import { Arrow } from './Arrow';
 import { CitySection } from './CitySection';
 import { SiteFooter } from './SiteFooter';
 
@@ -15,7 +16,7 @@ export function HomePage() {
   const storyHeading = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    document.title = person ? person.name + ' — Envelhecer' : 'Envelhecer — histórias que permanecem';
+    document.title = person ? person.fullName + ' - Envelhecer' : 'Envelhecer - histórias que permanecem';
     if (person) {
       lastSelected.current = person.id;
       storyHeading.current?.focus({ preventScroll: true });
@@ -41,12 +42,12 @@ export function HomePage() {
           <div className="home-content" aria-hidden={!!person} inert={!!person}>
             <header className="home-topline"><span className="project-mark"><span className="frame-mark" aria-hidden="true" />Fotodocumentário</span><span>Chapecó · Santa Catarina</span></header>
             <div className="home-title">
-              <p className="home-title__intro">Histórias traçadas pelo</p>
+              <p className="home-title__intro">Um olhar de experiência capturado em imagem</p>
               <h1>ENVELHECER<span></span></h1>
             </div>
             <footer className="home-bottomline">
               <p>Selecione um retrato<br className="mobile-break" /> para conhecer sua história</p>
-              <span>Histórias da Cidade do Idoso</span>
+              <span className="home-scroll-cue"><span>Histórias da Cidade do Idoso</span><Arrow /></span>
             </footer>
           </div>
           {person && (
@@ -55,7 +56,7 @@ export function HomePage() {
               <div className="story-intro__body">
                 <p className="eyebrow">Envelhecer</p>
                 {person.isDemo && <p className="demo-label">Nome, imagem e texto demonstrativos</p>}
-                <h1 ref={storyHeading} tabIndex={-1}>{person.name}</h1>
+                <h1 ref={storyHeading} tabIndex={-1}>{person.fullName}</h1>
                 <div className="story-intro__quote">
                   <p className="eyebrow">{person.isDemo ? 'Espaço para uma frase da entrevista' : 'Em suas palavras'}</p>
                   {person.isDemo ? <p className="quote-placeholder">{person.quote}</p> : <blockquote>{person.quote}</blockquote>}

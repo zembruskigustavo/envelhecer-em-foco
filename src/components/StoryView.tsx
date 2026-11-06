@@ -8,7 +8,7 @@ export function StoryView({ person, people, onSelect, onBack }: {
   person: Interviewee; people: Interviewee[]; onSelect: (id: string) => void; onBack: () => void;
 }) {
   return (
-    <article className="story-view" aria-label={'Narrativa de ' + person.name}>
+    <article className="story-view" aria-label={'Narrativa de ' + person.fullName}>
       <div className="story-content">
         <div className="story-content__eyebrow"><span>Uma vida, muitos capítulos</span></div>
         {person.sections.map((section, index) => <StorySection key={person.id + section.id} section={section} index={index} isDemo={person.isDemo} />)}

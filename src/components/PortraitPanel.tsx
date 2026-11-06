@@ -16,7 +16,7 @@ export function PortraitPanel({ person, selectedId, onSelect, buttonRef }: {
       ref={buttonRef}
       className={'portrait-panel' + (isSelected ? ' is-selected' : '')}
       onClick={() => onSelect(person.id)}
-      aria-label={'Conhecer a história de ' + person.name + (person.isDemo ? ' — conteúdo demonstrativo' : '')}
+      aria-label={'Conhecer a história de ' + person.fullName + (person.isDemo ? ' — conteúdo demonstrativo' : '')}
       tabIndex={inStory ? -1 : 0}
       disabled={inStory}
       aria-hidden={inStory}

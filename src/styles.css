@@ -55,7 +55,7 @@ p, h1, h2, blockquote { margin: 0; }
 .project-mark { display: flex; align-items: center; gap: 14px; }
 .frame-mark { width: 25px; height: 25px; display: inline-block; background: linear-gradient(var(--copper),var(--copper)) left top/8px 1px, linear-gradient(var(--copper),var(--copper)) left top/1px 8px, linear-gradient(var(--copper),var(--copper)) right bottom/8px 1px, linear-gradient(var(--copper),var(--copper)) right bottom/1px 8px; background-repeat: no-repeat; }
 .home-title { position: absolute; top: 43%; left: 0; right: 0; transform: translateY(-50%); text-align: center; }
-.home-title__intro { font-size: 11px; font-weight: 400; letter-spacing: .23em; text-transform: uppercase; margin-bottom: 18px; }
+.home-title__intro { max-width: calc(100% - 48px); margin: 0 auto 18px; font-size: 11px; font-weight: 400; line-height: 1.6; letter-spacing: .23em; text-transform: uppercase; text-wrap: balance; }
 .home-title h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(64px, min(14.6vw, 23svh), 280px); letter-spacing: -.065em; line-height: .94; color: var(--copper); text-shadow: 0 2px 30px #0003; }
 .home-title h1 span { display: block; font: 400 14px/1 var(--sans); color: var(--paper-light); letter-spacing: .65em; margin-top: 24px; padding-left: .65em; }
 .home-bottomline { position: absolute; bottom: 27px; left: var(--gutter); right: var(--gutter); display: flex; justify-content: space-between; align-items: end; gap: 25px; font-size: 10px; letter-spacing: .025em; line-height: 1.6; }
@@ -86,7 +86,7 @@ p, h1, h2, blockquote { margin: 0; }
 .story-intro__body > .eyebrow { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
 .demo-label { display: inline-block; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--copper-dark); line-height: 1.7; }
 .story-intro__body > .demo-label { margin-top: 20px; }
-.story-intro h1 { font: 400 clamp(42px, 4.7vw, 84px)/1.07 var(--serif); letter-spacing: -.045em; margin-top: 18px; max-width: 600px; overflow-wrap: break-word; }
+.story-intro h1 { font: 400 clamp(42px, 4.7vw, 84px)/1.07 var(--serif); letter-spacing: -.045em; margin-top: 18px; max-width: 600px; overflow-wrap: break-word; text-wrap: balance; }
 .story-intro h1:focus { outline: none; }
 .story-intro__quote { margin-top: 34px; padding-left: 20px; border-left: 1px solid var(--copper-dark); }
 .story-intro__quote .eyebrow { color: var(--copper-dark); font-size: 9px; letter-spacing: .09em; }

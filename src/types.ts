@@ -7,6 +7,7 @@ export interface NarrativeSection {
 export interface Interviewee {
   id: string;
   name: string;
+  fullName: string;
   image: {
     src: string;
     gallerySrc: string;

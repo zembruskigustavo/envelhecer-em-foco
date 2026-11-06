@@ -98,7 +98,8 @@ envelhecer-em-foco/
 Edite somente `src/data/interviewees.ts` para alterar os quatro participantes:
 
 - `id`: identificador do link; mantenha estável depois de compartilhar.
-- `name`: nome da pessoa entrevistada.
+- `name`: nome curto usado nos retratos e na navegação entre histórias.
+- `fullName`: nome completo exibido na história expandida, no título da página e nos rótulos acessíveis.
 - `image.src`: caminho ou URL da fotografia completa, usada ao abrir a história e nas sugestões de outras histórias.
 - `image.gallerySrc`: caminho ou URL do recorte usado na galeria inicial.
 - `image.fallback`: imagem alternativa local.
