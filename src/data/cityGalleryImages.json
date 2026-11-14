@@ -1,0 +1,354 @@
+[
+  {
+    "id": "editadas_1",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_1-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_1-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_1.jpg",
+    "width": 1800,
+    "height": 2400
+  },
+  {
+    "id": "editadas_2",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_2-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_2-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_2.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_3",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_3-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_3-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_3.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_4",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_4-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_4-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_4.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_5",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_5-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_5-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_5.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_6",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_6-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_6-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_6.jpg",
+    "width": 1025,
+    "height": 1535
+  },
+  {
+    "id": "editadas_7",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_7-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_7-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_7.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_8",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_8-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_8-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_8.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_9",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_9-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_9-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_9.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_10",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_10-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_10-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_10.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_11",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_11-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_11-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_11.jpg",
+    "width": 2400,
+    "height": 1803
+  },
+  {
+    "id": "editadas_12",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_12-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_12-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_12.jpg",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "id": "editadas_13",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_13-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_13-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_13.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_14",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_14-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_14-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_14.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_15",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_15-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_15-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_15.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_16",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_16-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_16-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_16.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_17",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_17-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_17-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_17.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_18",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_18-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_18-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_18.jpg",
+    "width": 2400,
+    "height": 1527
+  },
+  {
+    "id": "editadas_19",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_19-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_19-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_19.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_20",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_20-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_20-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_20.jpg",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "id": "editadas_21",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_21-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_21-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_21.jpg",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "id": "editadas_22",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_22-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_22-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_22.jpg",
+    "width": 2400,
+    "height": 1525
+  },
+  {
+    "id": "editadas_23",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_23-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_23-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_23.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_24",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_24-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_24-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_24.jpg",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "id": "editadas_25",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_25-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_25-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_25.jpg",
+    "width": 2400,
+    "height": 1744
+  },
+  {
+    "id": "editadas_26",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_26-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_26-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_26.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_27",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_27-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_27-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_27.jpg",
+    "width": 2400,
+    "height": 1424
+  },
+  {
+    "id": "editadas_28",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_28-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_28-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_28.jpg",
+    "width": 2400,
+    "height": 1755
+  },
+  {
+    "id": "editadas_29",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_29-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_29-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_29.jpg",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "id": "editadas_30",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_30-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_30-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_30.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_31",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_31-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_31-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_31.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_32",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_32-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_32-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_32.jpg",
+    "width": 2400,
+    "height": 1675
+  },
+  {
+    "id": "editadas_33",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_33-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_33-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_33.jpg",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "id": "editadas_34",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_34-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_34-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_34.jpg",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "id": "editadas_35",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_35-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_35-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_35.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_36",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_36-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_36-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_36.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_37",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_37-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_37-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_37.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_38",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_38-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_38-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_38.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_39",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_39-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_39-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_39.jpg",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "id": "editadas_40",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_40-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_40-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_40.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_41",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_41-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_41-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_41.jpg",
+    "width": 2400,
+    "height": 1816
+  },
+  {
+    "id": "editadas_42",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_42-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_42-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_42.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_43",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_43-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_43-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_43.jpg",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "id": "editadas_44",
+    "thumbnailSrc": "./images/cidadedoidoso/optimized/editadas_44-thumb.jpg",
+    "src": "./images/cidadedoidoso/optimized/editadas_44-view.jpg",
+    "originalSrc": "./images/cidadedoidoso/editadas_44.jpg",
+    "width": 1600,
+    "height": 2400
+  }
+]

@@ -2,13 +2,33 @@ import { useEffect, useRef, useState } from 'react';
 import { city } from '../data/city';
 import { Arrow } from './Arrow';
 
-export function CitySection() {
+export function CitySection({ galleryOpen, onOpenGallery }: { galleryOpen: boolean; onOpenGallery: () => void }) {
   const [imageFailed, setImageFailed] = useState(false);
   const [detailsVisible, setDetailsVisible] = useState(false);
   const coverRef = useRef<HTMLDivElement>(null);
   const detailsRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const hasOpened = useRef(false);
+  const galleryLinkRef = useRef<HTMLAnchorElement>(null);
+  const wasGalleryOpen = useRef(galleryOpen);
+  const returningToGalleryLink = useRef(false);
+
+  function focusGalleryLink() {
+    galleryLinkRef.current?.focus({ preventScroll: true });
+    galleryLinkRef.current?.scrollIntoView({ block: 'center', behavior: 'instant' });
+  }
+
+  useEffect(() => {
+    if (wasGalleryOpen.current && !galleryOpen) {
+      hasOpened.current = true;
+      if (detailsVisible) focusGalleryLink();
+      else {
+        returningToGalleryLink.current = true;
+        setDetailsVisible(true);
+      }
+    }
+    wasGalleryOpen.current = galleryOpen;
+  }, [galleryOpen, detailsVisible]);
 
   function focusDetails() {
     detailsRef.current?.focus({ preventScroll: true });
@@ -27,7 +47,10 @@ export function CitySection() {
   useEffect(() => {
     if (!hasOpened.current) return;
     if (detailsVisible) {
-      focusDetails();
+      if (returningToGalleryLink.current) {
+        returningToGalleryLink.current = false;
+        focusGalleryLink();
+      } else focusDetails();
     } else {
       triggerRef.current?.focus({ preventScroll: true });
       coverRef.current?.scrollIntoView({
@@ -67,10 +90,14 @@ export function CitySection() {
             </div>
           </section>
         ))}
-        <aside className="city-source" aria-label="Fonte das informações">
-          <p className="eyebrow">Para saber mais</p>
-          <a href={city.source.url} target="_blank" rel="noreferrer">{city.source.label}<Arrow /></a>
-          <p>Texto baseado na página oficial, consultada em {city.source.accessedAt}.</p>
+        <aside className="city-source" aria-label="Galeria de fotografias">
+          <p className="eyebrow">A Cidade do Idoso em imagens</p>
+          <a ref={galleryLinkRef} id="city-gallery-link" href="?galeria=cidade-do-idoso" onClick={(event) => {
+            if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            onOpenGallery();
+          }}>Ir para a galeria<Arrow /></a>
+          <p>Fotografias de Emily Gilioli.</p>
         </aside>
         <div className="city-details__actions">
           {/**/}<button className="back-button" type="button" onClick={() => setDetailsVisible(false)}><Arrow back />Voltar à fotografia</button>

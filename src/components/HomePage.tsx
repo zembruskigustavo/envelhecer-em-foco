@@ -6,25 +6,35 @@ import { StoryView } from './StoryView';
 import { BackButton } from './BackButton';
 import { Arrow } from './Arrow';
 import { CitySection } from './CitySection';
+import { CityGallery } from './CityGallery';
 import { SiteFooter } from './SiteFooter';
 
 export function HomePage() {
-  const { selectedId, navigate } = useStoryNavigation();
+  const { selectedId, galleryOpen, navigate, openCityGallery, closeCityGallery } = useStoryNavigation();
   const person = interviewees.find((item) => item.id === selectedId);
   const hasNarrative = Boolean(person?.sections.length);
   const portraitButtons = useRef(new Map<string, HTMLButtonElement>());
   const lastSelected = useRef<string | null>(null);
   const storyHeading = useRef<HTMLHeadingElement>(null);
+  const wasGalleryOpen = useRef(galleryOpen);
 
   useEffect(() => {
+    if (galleryOpen) {
+      wasGalleryOpen.current = true;
+      return;
+    }
     document.title = person ? person.fullName + ' - Envelhecer' : 'Envelhecer - histórias que permanecem';
+    if (wasGalleryOpen.current) {
+      wasGalleryOpen.current = false;
+      return;
+    }
     if (person) {
       lastSelected.current = person.id;
       storyHeading.current?.focus({ preventScroll: true });
     } else if (lastSelected.current) {
       portraitButtons.current.get(lastSelected.current)?.focus({ preventScroll: true });
     }
-  }, [person]);
+  }, [person, galleryOpen]);
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -36,8 +46,8 @@ export function HomePage() {
 
   return (
     <>
-      <a className="skip-link" href={person ? '#narrativa' : '#retratos'}>{person ? (hasNarrative ? 'Pular para a narrativa' : 'Pular para outras histórias') : 'Pular para os retratos'}</a>
-      <main className={'experience' + (person ? ' experience--story' : '')}>
+      <a className="skip-link" hidden={galleryOpen} href={person ? '#narrativa' : '#retratos'}>{person ? (hasNarrative ? 'Pular para a narrativa' : 'Pular para outras histórias') : 'Pular para os retratos'}</a>
+      <main hidden={galleryOpen} className={'experience' + (person ? ' experience--story' : '')}>
         <section className="stage" id="retratos" aria-label={person ? 'Apresentação da história' : 'Envelhecer'}>
           <PortraitGallery people={interviewees} selectedId={selectedId} onSelect={navigate} getButtonRef={(id) => (node) => { if (node) portraitButtons.current.set(id, node); else portraitButtons.current.delete(id); }} />
           <div className="home-content" aria-hidden={!!person} inert={!!person}>
@@ -69,8 +79,9 @@ export function HomePage() {
           )}
         </section>
         {person && <div id="narrativa" tabIndex={-1}><StoryView person={person} people={interviewees} onSelect={navigate} onBack={() => navigate(null)} /></div>}
-        {!person && <CitySection />}
+        {!person && <CitySection galleryOpen={galleryOpen} onOpenGallery={openCityGallery} />}
       </main>
+      {galleryOpen && <CityGallery onBack={closeCityGallery} />}
       <SiteFooter />
     </>
   );
