@@ -1,5 +1,6 @@
 import type { Interviewee } from '../types';
-import { StorySection } from './StorySection';
+import { project } from '../data/project';
+import { StoryPhoto } from './StoryPhoto';
 import { PortraitImage } from './PortraitImage';
 import { BackButton } from './BackButton';
 import { Arrow } from './Arrow';
@@ -9,9 +10,8 @@ export function StoryView({ person, people, onSelect, onBack }: {
 }) {
   return (
     <article className="story-view" aria-label={'Narrativa de ' + person.fullName}>
-      {person.sections.length > 0 && <div className="story-content">
-        <div className="story-content__eyebrow"><span>Uma vida, muitos capítulos</span></div>
-        {person.sections.map((section, index) => <StorySection key={person.id + section.id} section={section} index={index} />)}
+      {person.photos.length > 0 && <div className="story-content">
+        {person.photos.map((photo) => <StoryPhoto key={photo.id} photo={photo} />)}
       </div>}
       <footer className="story-footer">
         <div className="story-footer__heading">
@@ -26,7 +26,7 @@ export function StoryView({ person, people, onSelect, onBack }: {
             </button>
           ))}
         </nav>
-        <div className="story-footer__bottom"><BackButton onBack={onBack} /><span>Envelhecer em Foco · Chapecó, SC</span></div>
+        <div className="story-footer__bottom"><BackButton onBack={onBack} /><span>{project.title} · Chapecó, SC</span></div>
       </footer>
     </article>
   );

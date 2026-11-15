@@ -1,5 +1,10 @@
+const title = 'Envelhecer';
+const subtitle = 'Um olhar de experiência capturado em imagem';
+
 export const project = {
-  title: 'Envelhecer em Foco',
+  title,
+  subtitle,
+  fullTitle: `${title}: ${subtitle}`,
   academicCredit:
     'Website desenvolvido para o Trabalho de Conclusão de Curso da graduação em Jornalismo da Unochapecó.',
   responsible: {

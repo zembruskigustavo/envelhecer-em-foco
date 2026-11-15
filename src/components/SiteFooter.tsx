@@ -6,12 +6,12 @@ export function SiteFooter() {
     <footer className="site-footer" aria-label="Créditos e contatos do projeto">
       <div className="site-footer__inner">
         <div className="site-footer__project">
-          <p className="eyebrow">Histórias que permanecem</p>
-          <p className="site-footer__title">Envelhecer <span>em foco</span></p>
+          <p className="eyebrow">{project.subtitle}</p>
+          <p className="site-footer__title">{project.title}</p>
           <p className="site-footer__academic">{project.academicCredit}</p>
         </div>
         <div className="site-footer__person">
-          <p className="eyebrow">Responsável pelo projeto</p>
+          <p className="eyebrow">Projeto e fotografias</p>
           <h2>{project.responsible.name}</h2>
           <address>
             <a href={project.responsible.phoneHref}>{project.responsible.phone}</a>

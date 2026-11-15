@@ -5,7 +5,7 @@ export const city = {
   introduction:
     'Em Chapecó, um espaço público de convivência e atividades para pessoas com 60 anos ou mais.',
   image: {
-    src: './images/cidadedoidoso.jpg',
+    src: './images/optimized/cidadedoidoso.jpg',
     alt: 'Cidade do Idoso, em Chapecó.',
     credit: 'Emily Gilioli',
     source: './images/cidadedoidoso.jpg',

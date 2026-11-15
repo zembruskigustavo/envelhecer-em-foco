@@ -97,7 +97,6 @@ export function CitySection({ galleryOpen, onOpenGallery }: { galleryOpen: boole
             event.preventDefault();
             onOpenGallery();
           }}>Ir para a galeria<Arrow /></a>
-          <p>Fotografias de Emily Gilioli.</p>
         </aside>
         <div className="city-details__actions">
           {/**/}<button className="back-button" type="button" onClick={() => setDetailsVisible(false)}><Arrow back />Voltar à fotografia</button>

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { interviewees } from '../data/interviewees';
+import { project } from '../data/project';
 import { useStoryNavigation } from '../hooks/useStoryNavigation';
 import { PortraitGallery } from './PortraitGallery';
 import { StoryView } from './StoryView';
@@ -12,7 +13,7 @@ import { SiteFooter } from './SiteFooter';
 export function HomePage() {
   const { selectedId, galleryOpen, navigate, openCityGallery, closeCityGallery } = useStoryNavigation();
   const person = interviewees.find((item) => item.id === selectedId);
-  const hasNarrative = Boolean(person?.sections.length);
+  const hasNarrative = Boolean(person?.photos.length);
   const portraitButtons = useRef(new Map<string, HTMLButtonElement>());
   const lastSelected = useRef<string | null>(null);
   const storyHeading = useRef<HTMLHeadingElement>(null);
@@ -23,7 +24,7 @@ export function HomePage() {
       wasGalleryOpen.current = true;
       return;
     }
-    document.title = person ? person.fullName + ' - Envelhecer' : 'Envelhecer - histórias que permanecem';
+    document.title = person ? person.fullName + ' - ' + project.title : project.fullTitle;
     if (wasGalleryOpen.current) {
       wasGalleryOpen.current = false;
       return;
@@ -48,13 +49,13 @@ export function HomePage() {
     <>
       <a className="skip-link" hidden={galleryOpen} href={person ? '#narrativa' : '#retratos'}>{person ? (hasNarrative ? 'Pular para a narrativa' : 'Pular para outras histórias') : 'Pular para os retratos'}</a>
       <main hidden={galleryOpen} className={'experience' + (person ? ' experience--story' : '')}>
-        <section className="stage" id="retratos" aria-label={person ? 'Apresentação da história' : 'Envelhecer'}>
+        <section className="stage" id="retratos" aria-label={person ? 'Apresentação da história' : project.title}>
           <PortraitGallery people={interviewees} selectedId={selectedId} onSelect={navigate} getButtonRef={(id) => (node) => { if (node) portraitButtons.current.set(id, node); else portraitButtons.current.delete(id); }} />
           <div className="home-content" aria-hidden={!!person} inert={!!person}>
             <header className="home-topline"><span className="project-mark"><span className="frame-mark" aria-hidden="true" />Fotodocumentário</span><span>Chapecó · Santa Catarina</span></header>
             <div className="home-title">
-              <p className="home-title__intro">Um olhar de experiência capturado em imagem</p>
-              <h1>ENVELHECER<span></span></h1>
+              <p className="home-title__intro">{project.subtitle}</p>
+              <h1 aria-label={project.title}>{project.title.toUpperCase()}<span></span></h1>
             </div>
             <footer className="home-bottomline">
               <p>Selecione um retrato<br className="mobile-break" /> para conhecer sua história</p>
@@ -65,13 +66,12 @@ export function HomePage() {
             <header className="story-intro" key={person.id}>
               <BackButton onBack={() => navigate(null)} />
               <div className="story-intro__body">
-                <p className="eyebrow">Envelhecer</p>
+                <p className="eyebrow">{project.title}</p>
                 <h1 ref={storyHeading} tabIndex={-1}>{person.fullName}</h1>
                 <div className="story-intro__quote">
                   <p className="eyebrow">Em suas palavras</p>
                   <blockquote>{person.quote}</blockquote>
                 </div>
-                {person.introduction && <p className="story-intro__description">{person.introduction}</p>}
                 {hasNarrative && <a className="reading-link" href="#narrativa">Percorra a história <span aria-hidden="true">↓</span></a>}
               </div>
               <p className="photo-credit">Fotografia: <a href={person.image.source} target="_blank" rel="noreferrer">{person.image.credit}</a></p>

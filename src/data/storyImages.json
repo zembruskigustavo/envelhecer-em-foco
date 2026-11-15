@@ -1,0 +1,135 @@
+{
+  "zelia": [
+    {
+      "id": "zelia-01",
+      "src": "./images/zelia/optimized/dona zélia 1.jpg",
+      "originalSrc": "./images/zelia/dona zélia 1.jpg",
+      "width": 1707,
+      "height": 2560
+    },
+    {
+      "id": "zelia-02",
+      "src": "./images/zelia/optimized/dona zélia 2.jpg",
+      "originalSrc": "./images/zelia/dona zélia 2.jpg",
+      "width": 2560,
+      "height": 1707
+    },
+    {
+      "id": "zelia-03",
+      "src": "./images/zelia/optimized/dona zélia 3.jpg",
+      "originalSrc": "./images/zelia/dona zélia 3.jpg",
+      "width": 1707,
+      "height": 2560
+    },
+    {
+      "id": "zelia-04",
+      "src": "./images/zelia/optimized/dona zélia 4.jpg",
+      "originalSrc": "./images/zelia/dona zélia 4.jpg",
+      "width": 2560,
+      "height": 1707
+    },
+    {
+      "id": "zelia-05",
+      "src": "./images/zelia/optimized/dona zélia 5.jpg",
+      "originalSrc": "./images/zelia/dona zélia 5.jpg",
+      "width": 1707,
+      "height": 2560
+    },
+    {
+      "id": "zelia-06",
+      "src": "./images/zelia/optimized/dona zélia 6.jpg",
+      "originalSrc": "./images/zelia/dona zélia 6.jpg",
+      "width": 1651,
+      "height": 2560
+    }
+  ],
+  "jaime": [
+    {
+      "id": "jaime-01",
+      "src": "./images/jaime/optimized/seu Jaime 1.jpg",
+      "originalSrc": "./images/jaime/seu Jaime 1.jpg",
+      "width": 2560,
+      "height": 1447
+    },
+    {
+      "id": "jaime-02",
+      "src": "./images/jaime/optimized/seu Jaime 2.jpg",
+      "originalSrc": "./images/jaime/seu Jaime 2.jpg",
+      "width": 2560,
+      "height": 1707
+    },
+    {
+      "id": "jaime-03",
+      "src": "./images/jaime/optimized/seu Jaime 3.jpg",
+      "originalSrc": "./images/jaime/seu Jaime 3.jpg",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "jaime-04",
+      "src": "./images/jaime/optimized/seu Jaime 4.jpg",
+      "originalSrc": "./images/jaime/seu Jaime 4.jpg",
+      "width": 2560,
+      "height": 1706
+    },
+    {
+      "id": "jaime-05",
+      "src": "./images/jaime/optimized/seu Jaime 5.jpg",
+      "originalSrc": "./images/jaime/seu Jaime 5.jpg",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "jaime-06",
+      "src": "./images/jaime/optimized/seu Jaime 6.jpg",
+      "originalSrc": "./images/jaime/seu Jaime 6.jpg",
+      "width": 1707,
+      "height": 2560
+    }
+  ],
+  "dorotilde": [
+    {
+      "id": "dorotilde-01",
+      "src": "./images/dorotilde/optimized/Dorotilde 1.jpg",
+      "originalSrc": "./images/dorotilde/Dorotilde 1.jpg",
+      "width": 1707,
+      "height": 2560
+    },
+    {
+      "id": "dorotilde-02",
+      "src": "./images/dorotilde/optimized/Dorotilde 2.jpg",
+      "originalSrc": "./images/dorotilde/Dorotilde 2.jpg",
+      "width": 2560,
+      "height": 1706
+    },
+    {
+      "id": "dorotilde-03",
+      "src": "./images/dorotilde/optimized/Dorotilde 3.jpg",
+      "originalSrc": "./images/dorotilde/Dorotilde 3.jpg",
+      "width": 1707,
+      "height": 2560
+    },
+    {
+      "id": "dorotilde-04",
+      "src": "./images/dorotilde/optimized/Dorotilde 4.jpg",
+      "originalSrc": "./images/dorotilde/Dorotilde 4.jpg",
+      "width": 2560,
+      "height": 1970
+    },
+    {
+      "id": "dorotilde-05",
+      "src": "./images/dorotilde/optimized/Dorotilde 5.jpg",
+      "originalSrc": "./images/dorotilde/Dorotilde 5.jpg",
+      "width": 2560,
+      "height": 1831
+    },
+    {
+      "id": "dorotilde-06",
+      "src": "./images/dorotilde/optimized/Dorotilde 6.jpg",
+      "originalSrc": "./images/dorotilde/Dorotilde 6.jpg",
+      "width": 1707,
+      "height": 2560
+    }
+  ],
+  "luiz": []
+}

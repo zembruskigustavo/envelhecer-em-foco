@@ -1,4 +1,6 @@
-# Envelhecer em Foco
+# Envelhecer
+
+**Título completo:** Envelhecer: Um olhar de experiência capturado em imagem.
 
 Fotodocumentário interativo de Emily Gilioli, desenvolvido para o Trabalho de Conclusão de Curso da graduação em Jornalismo da Unochapecó. O projeto apresenta retratos e falas de quatro pessoas entrevistadas na Cidade do Idoso, em Chapecó, Santa Catarina.
 
@@ -17,12 +19,13 @@ Todas as fotografias são de **Emily Gilioli** e integram o acervo local do proj
 - Retratos recortados na página inicial e fotografias completas como fonte das histórias expandidas.
 - Ajuste das imagens ao painel, preservando a proporção e preenchendo a área sem margens.
 - Nome completo e frase da entrevista na apresentação de cada participante.
-- Apresentação e três capítulos por participante, com espaços reservados para os textos das histórias.
+- Ensaio de seis fotos adicionais por participante, inteiras e alinhadas alternadamente à esquerda e à direita, com os espaços laterais vazios.
+- Legendas imediatamente abaixo das fotos, acompanhando sua largura, em 10 px e entrelinha simples.
 - Navegação entre histórias, retorno à galeria e suporte ao histórico do navegador.
 - Indicador animado de rolagem na página inicial.
 - Capa da Cidade do Idoso em tela inteira, com apresentação revelada pelo botão “Conhecer a Cidade do Idoso”.
 - Galeria da Cidade do Idoso em uma tela própria, com 44 fotografias inteiras em colunas de alturas variadas.
-- Ampliação das fotografias, navegação por setas e campos preparados para as legendas.
+- Ampliação das fotografias, navegação por setas e descrições acessíveis no texto alternativo das imagens.
 - Créditos acadêmicos, autoria das fotografias e contatos do projeto.
 
 ## Tecnologias
@@ -61,15 +64,20 @@ No PowerShell, caso a execução de `npm.ps1` esteja restrita, utilize `npm.cmd`
 | `src/components/HomePage.tsx` | Página inicial, apresentação dos participantes e composição das seções. |
 | `src/components/PortraitGallery.tsx` e `PortraitPanel.tsx` | Galeria e seleção dos retratos. |
 | `src/components/PortraitImage.tsx` | Seleção da fotografia conforme a galeria ou a história. |
-| `src/components/StoryView.tsx` e `StorySection.tsx` | Narrativa e navegação entre participantes. |
+| `src/components/StoryView.tsx` e `StoryPhoto.tsx` | Ensaio fotográfico, legendas e navegação entre participantes. |
 | `src/components/CitySection.tsx` | Capa e apresentação da Cidade do Idoso. |
 | `src/components/CityGallery.tsx` | Galeria da Cidade do Idoso e visualização ampliada. |
 | `src/components/SiteFooter.tsx` | Créditos e contatos. |
 | `src/data/interviewees.ts` | Identificação dos participantes, fotografias e conteúdo das entrevistas. |
+| `src/data/storyPhotos.ts` | Descrições acessíveis e campos de legenda das fotos de cada participante. |
+| `src/data/storyImages.json` | Caminhos e dimensões dos ensaios, gerados pelo script de preparação. |
 | `src/data/city.ts` | Apresentação da Cidade do Idoso, fotografia e referência do texto. |
-| `src/data/cityGallery.ts` | Descrições acessíveis e legendas das fotografias da galeria. |
+| `src/data/cityGallery.ts` | Descrições acessíveis das fotografias da galeria. |
 | `src/data/cityGalleryImages.json` | Caminhos e dimensões das imagens, gerados pelo script de preparação. |
 | `scripts/prepare-city-gallery.ps1` | Geração das versões leves das fotografias, preservando os originais. |
+| `scripts/prepare-main-images.ps1` | Geração das versões leves dos retratos expandidos e da capa da Cidade do Idoso. |
+| `scripts/prepare-story-photos.ps1` | Preparação e ordenação das seis fotos adicionais de cada participante. |
+| `scripts/photo-helpers.ps1` | Redimensionamento e orientação dos retratos e das fotos dos ensaios, preservando os originais. |
 | `src/data/project.ts` | Créditos acadêmicos e contatos do projeto. |
 | `src/hooks/useStoryNavigation.ts` | Navegação entre histórias e galeria, links diretos e histórico do navegador. |
 | `src/types.ts` | Tipos dos dados editoriais. |
@@ -81,17 +89,33 @@ Os arquivos abaixo ficam em `public/images/`. A autoria de todos eles é de Emil
 
 | Pessoa ou local | Galeria inicial | História ou capa |
 | --- | --- | --- |
-| Zélia Deola Kuhn | `zeliametade.jpg` | `zelia.jpg` |
-| Jaime Constante Zuffo | `jaimemetade.jpg` | `jaimerecortecolorida.jpg` |
-| Dorotilde Bernardes | `dorotildemetade.jpg` | `dorotilde.jpg` |
-| Luiz Fernando Costa | `luizmetade.jpg` | `luiz.jpg` |
+| Zélia Deola Kuhn | `zelia/zeliametade.jpg` | `zelia/zelia.jpg` |
+| Jaime Constante Zuffo | `jaime/jaimemetade.jpg` | `jaime/jaimerecortecolorida.jpg` |
+| Dorotilde Bernardes | `dorotilde/dorotildemetade.jpg` | `dorotilde/dorotilde.jpg` |
+| Luiz Fernando Costa | `luiz/luizmetade.jpg` | `luiz/luiz.jpg` |
 | Cidade do Idoso | — | `cidadedoidoso.jpg` |
 
-O arquivo `jaime.jpg` também pertence ao acervo e é a fotografia original vinculada ao crédito da história de Jaime.
+O arquivo `jaime/jaime.jpg` também pertence ao acervo e é a fotografia original vinculada ao crédito da história de Jaime.
 
-As 44 fotografias da galeria da Cidade do Idoso ficam em `public/images/cidadedoidoso/`, com os nomes `editadas_1.jpg` a `editadas_44.jpg`. A galeria segue essa ordem numérica e usa versões leves da subpasta `optimized/`: miniaturas na grade e imagens maiores na ampliação. O arquivo original permanece disponível no visualizador.
+Os quatro retratos expandidos e a capa da Cidade do Idoso usam versões JPEG em `public/images/optimized/`, com o mesmo nome dos arquivos de origem, lado maior de até 2560 pixels e qualidade 88. Os recortes da página inicial ficam nas pastas dos participantes. Os arquivos originais são preservados, incluindo os destinos dos links de crédito. Para regenerar essas cinco versões no Windows:
 
-Nas configurações, use caminhos como `./images/zelia.jpg`: o Vite publica o conteúdo de `public/` na raiz do site. Preserve a correspondência entre maiúsculas e minúsculas nos nomes dos arquivos.
+```powershell
+powershell -NoProfile -File scripts/prepare-main-images.ps1
+```
+
+Cada ensaio reúne seis fotos além do retrato da abertura, seguindo os números de 1 a 6 no final dos nomes dos arquivos. Os originais ficam nas pastas `public/images/zelia/`, `jaime/`, `dorotilde/` e `luiz/`. Atualmente estão incluídos os ensaios de Zélia, Jaime e Dorotilde; as seis fotos adicionais de Luiz ainda não foram fornecidas. Sua abertura e a navegação permanecem disponíveis.
+
+Para gerar as versões leves dos ensaios e atualizar `src/data/storyImages.json`, execute no Windows:
+
+```powershell
+powershell -NoProfile -File scripts/prepare-story-photos.ps1
+```
+
+O script cria uma subpasta `optimized/` em cada pasta com fotos numeradas. São aceitas seis fotos, numeradas de 1 a 6, ou nenhuma enquanto o ensaio estiver pendente. Os retratos da abertura não entram nessa contagem. As versões preservam as proporções, com lado maior de até 2560 pixels e qualidade JPEG 88. Os textos de legenda permanecem separados da geração das imagens.
+
+As 44 fotografias da galeria da Cidade do Idoso ficam em `public/images/cidadedoidoso/`, com os nomes `editadas_1.jpg` a `editadas_44.jpg`. A galeria segue essa ordem numérica e usa versões leves da subpasta `optimized/`: miniaturas na grade e imagens maiores na ampliação. O visualizador mantém a navegação e o fechamento na própria página, com os rótulos "Anterior" e "Próxima" também nas telas menores. Os originais permanecem no acervo do projeto.
+
+Nas configurações, use caminhos como `./images/zelia/zeliametade.jpg`: o Vite publica o conteúdo de `public/` na raiz do site. Preserve os acentos, espaços e a correspondência entre maiúsculas e minúsculas nos nomes dos arquivos.
 
 ## Manutenção do conteúdo
 
@@ -109,12 +133,15 @@ Os dados editoriais ficam separados dos componentes em `src/data/`.
 | `image.credit` | Autoria da fotografia. |
 | `image.source` | Arquivo local aberto pelo link do crédito. |
 | `quote` | Frase da entrevista. |
-| `introduction` | Texto de apresentação, opcional. |
-| `sections` | Capítulos da narrativa, com `id`, `title` e `paragraphs`. |
+| `photos` | Seis fotos adicionais do ensaio, com descrição acessível e legenda. |
 
-As fotografias, os nomes e as frases de abertura correspondem aos participantes. Os textos corridos das histórias ainda não foram incluídos: cada participante possui uma apresentação e três capítulos com espaços reservados, explicitamente identificados.
+As fotografias, os nomes e as frases de abertura correspondem aos participantes. A narrativa abaixo da abertura é construída com fotos, pequenos fragmentos e falas nas legendas. Os espaços ao lado das imagens permanecem vazios, sem textos ou elementos de preenchimento.
 
-Para inserir os textos editados das entrevistas, substitua o conteúdo de `introduction` e de `sections[].paragraphs` em `src/data/interviewees.ts`. Os títulos e a divisão dos capítulos também podem ser ajustados nesses dados. A apresentação e os capítulos são exibidos somente quando possuem conteúdo.
+Para inserir as legendas, preencha `caption` em `src/data/storyPhotos.ts`. O identificador `zelia-01`, por exemplo, corresponde ao arquivo numerado 1 de Zélia. Os campos estão vazios até o recebimento dos textos e só aparecem na página quando preenchidos. O campo `alt` descreve visualmente a imagem para leitores de tela e pode ser revisado separadamente.
+
+As legendas são planejadas para 1 a 3 linhas e usam fonte de 10 px, entrelinha simples e a largura exata da imagem. Quebras de linha explícitas são preservadas; o texto não é truncado se ocupar mais linhas em uma tela menor. As fotos mantêm suas proporções e a alternância de alinhamento também no celular.
+
+As fotos da sequência usam 90% da largura prevista no primeiro layout para cada formato de imagem, com a altura ajustada proporcionalmente. Os intervalos entre elas variam de 32 a 64 px para manter a página mais compacta.
 
 Os links diretos usam o parâmetro `historia`:
 
@@ -129,7 +156,7 @@ O texto da Cidade do Idoso mantém como referência a [página oficial da Prefei
 
 A galeria tem o endereço `?galeria=cidade-do-idoso`, que pode ser aberto diretamente ou compartilhado. O link da Prefeitura fica no rodapé dessa tela; a apresentação do programa oferece o acesso "Ir para a galeria".
 
-Para adicionar as legendas, preencha o campo `caption` do respectivo arquivo em `src/data/cityGallery.ts`. Por exemplo, `editadas_1` corresponde a `editadas_1.jpg`. Os campos estão vazios até o recebimento dos textos e são exibidos abaixo da fotografia e na ampliação quando preenchidos. O campo `alt` contém a descrição visual acessível e pode ser revisado independentemente da legenda.
+As descrições das fotografias ficam no campo `alt` do respectivo arquivo em `src/data/cityGallery.ts`. Por exemplo, `editadas_1` corresponde a `editadas_1.jpg`. Elas são usadas como texto alternativo tanto na grade quanto na ampliação, sem legendas visíveis. A instrução de ampliação permanece no cabeçalho da galeria, e o crédito de autoria fica no rodapé geral do projeto.
 
 Ao substituir fotografias ou acrescentar arquivos à sequência `editadas_N.jpg`, regenere as versões leves no Windows:
 
@@ -137,7 +164,7 @@ Ao substituir fotografias ou acrescentar arquivos à sequência `editadas_N.jpg`
 powershell -NoProfile -File scripts/prepare-city-gallery.ps1
 ```
 
-O script atualiza as imagens em `optimized/` e o manifesto `src/data/cityGalleryImages.json`, sem alterar os originais ou as legendas. Para novas fotografias, inclua também a entrada editorial correspondente em `src/data/cityGallery.ts`. As imagens geradas acompanham o projeto; a hospedagem não precisa executar esse script.
+O script atualiza as imagens em `optimized/` e o manifesto `src/data/cityGalleryImages.json`, sem alterar os originais ou as descrições acessíveis. Para novas fotografias, inclua também a entrada editorial correspondente em `src/data/cityGallery.ts`. As imagens geradas acompanham o projeto; a hospedagem não precisa executar esse script.
 
 ## Acessibilidade
 

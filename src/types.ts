@@ -1,7 +1,11 @@
-export interface NarrativeSection {
+export interface StoryPhoto {
   id: string;
-  title: string;
-  paragraphs: string[];
+  src: string;
+  originalSrc: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
 }
 
 export interface Interviewee {
@@ -17,6 +21,5 @@ export interface Interviewee {
     source: string;
   };
   quote: string;
-  introduction?: string;
-  sections: NarrativeSection[];
+  photos: StoryPhoto[];
 }
