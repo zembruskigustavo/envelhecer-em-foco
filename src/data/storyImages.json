@@ -131,5 +131,34 @@
       "height": 2560
     }
   ],
-  "luiz": []
+  "luiz": [
+    {
+      "id": "luiz-01",
+      "src": "./images/luiz/optimized/Luiz 1.jpg",
+      "originalSrc": "./images/luiz/Luiz 1.jpg",
+      "width": 2560,
+      "height": 1706
+    },
+    {
+      "id": "luiz-02",
+      "src": "./images/luiz/optimized/Luiz 2.jpg",
+      "originalSrc": "./images/luiz/Luiz 2.jpg",
+      "width": 2560,
+      "height": 1707
+    },
+    {
+      "id": "luiz-03",
+      "src": "./images/luiz/optimized/Luiz 3.jpg",
+      "originalSrc": "./images/luiz/Luiz 3.jpg",
+      "width": 1707,
+      "height": 2560
+    },
+    {
+      "id": "luiz-04",
+      "src": "./images/luiz/optimized/Luiz 4.jpg",
+      "originalSrc": "./images/luiz/Luiz 4.jpg",
+      "width": 2472,
+      "height": 1648
+    }
+  ]
 }

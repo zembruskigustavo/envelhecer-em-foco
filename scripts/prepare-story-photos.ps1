@@ -7,23 +7,25 @@ $manifest = [ordered]@{}
 $photoCount = 0
 $sourceBytes = 0L
 $optimizedBytes = 0L
+$expectedCounts = [ordered]@{ zelia = 6; jaime = 6; dorotilde = 6; luiz = 4 }
 
-foreach ($participant in 'zelia', 'jaime', 'dorotilde', 'luiz') {
+foreach ($participant in $expectedCounts.Keys) {
+    $expectedCount = $expectedCounts[$participant]
     $sourceDirectory = Join-Path $projectRoot ('public\images\' + $participant)
     $files = @(Get-ChildItem -LiteralPath $sourceDirectory -File -Filter '*.jpg' |
         Where-Object { $_.BaseName -match '\d+$' } |
         Sort-Object { [int]([regex]::Match($_.BaseName, '\d+$').Value) })
-    if ($files.Count -ne 0 -and $files.Count -ne 6) {
-        throw ($participant + ': sao necessarias exatamente seis fotos numeradas, ou nenhuma enquanto o ensaio estiver pendente.')
+    if ($files.Count -ne 0 -and $files.Count -ne $expectedCount) {
+        throw ($participant + ': sao necessarias ' + $expectedCount + ' fotos numeradas, ou nenhuma enquanto o ensaio estiver pendente.')
     }
     $manifest[$participant] = @()
     if ($files.Count -eq 0) { continue }
     $outputDirectory = Join-Path $sourceDirectory 'optimized'
     New-Item -ItemType Directory -Path $outputDirectory -Force | Out-Null
-    foreach ($index in 0..5) {
+    foreach ($index in 0..($files.Count - 1)) {
         $file = $files[$index]
         $number = [int]([regex]::Match($file.BaseName, '\d+$').Value)
-        if ($number -ne $index + 1) { throw ($participant + ': a sequencia deve ir de 1 a 6, sem repeticoes.') }
+        if ($number -ne $index + 1) { throw ($participant + ': a sequencia deve ir de 1 a ' + $expectedCount + ', sem repeticoes.') }
         $version = Write-PhotoVersion $file.FullName (Join-Path $outputDirectory $file.Name)
         $manifest[$participant] += [ordered]@{
             id = $participant + '-' + $number.ToString('00')

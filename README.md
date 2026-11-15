@@ -19,7 +19,7 @@ Todas as fotografias são de **Emily Gilioli** e integram o acervo local do proj
 - Retratos recortados na página inicial e fotografias completas como fonte das histórias expandidas.
 - Ajuste das imagens ao painel, preservando a proporção e preenchendo a área sem margens.
 - Nome completo e frase da entrevista na apresentação de cada participante.
-- Ensaio de seis fotos adicionais por participante, inteiras e alinhadas alternadamente à esquerda e à direita, com os espaços laterais vazios.
+- Ensaios com seis fotos adicionais de Zélia, Jaime e Dorotilde e quatro de Luiz, inteiras e alinhadas alternadamente à esquerda e à direita, com os espaços laterais vazios.
 - Legendas imediatamente abaixo das fotos, acompanhando sua largura, em 10 px e entrelinha simples.
 - Navegação entre histórias, retorno à galeria e suporte ao histórico do navegador.
 - Indicador animado de rolagem na página inicial.
@@ -76,7 +76,7 @@ No PowerShell, caso a execução de `npm.ps1` esteja restrita, utilize `npm.cmd`
 | `src/data/cityGalleryImages.json` | Caminhos e dimensões das imagens, gerados pelo script de preparação. |
 | `scripts/prepare-city-gallery.ps1` | Geração das versões leves das fotografias, preservando os originais. |
 | `scripts/prepare-main-images.ps1` | Geração das versões leves dos retratos expandidos e da capa da Cidade do Idoso. |
-| `scripts/prepare-story-photos.ps1` | Preparação e ordenação das seis fotos adicionais de cada participante. |
+| `scripts/prepare-story-photos.ps1` | Preparação e ordenação das fotos adicionais de cada participante. |
 | `scripts/photo-helpers.ps1` | Redimensionamento e orientação dos retratos e das fotos dos ensaios, preservando os originais. |
 | `src/data/project.ts` | Créditos acadêmicos e contatos do projeto. |
 | `src/hooks/useStoryNavigation.ts` | Navegação entre histórias e galeria, links diretos e histórico do navegador. |
@@ -103,7 +103,7 @@ Os quatro retratos expandidos e a capa da Cidade do Idoso usam versões JPEG em 
 powershell -NoProfile -File scripts/prepare-main-images.ps1
 ```
 
-Cada ensaio reúne seis fotos além do retrato da abertura, seguindo os números de 1 a 6 no final dos nomes dos arquivos. Os originais ficam nas pastas `public/images/zelia/`, `jaime/`, `dorotilde/` e `luiz/`. Atualmente estão incluídos os ensaios de Zélia, Jaime e Dorotilde; as seis fotos adicionais de Luiz ainda não foram fornecidas. Sua abertura e a navegação permanecem disponíveis.
+Os ensaios de Zélia, Jaime e Dorotilde reúnem seis fotos além do retrato da abertura; o de Luiz reúne quatro. Cada sequência acompanha a numeração no final dos nomes dos arquivos. Os originais ficam nas pastas `public/images/zelia/`, `jaime/`, `dorotilde/` e `luiz/`.
 
 Para gerar as versões leves dos ensaios e atualizar `src/data/storyImages.json`, execute no Windows:
 
@@ -111,7 +111,7 @@ Para gerar as versões leves dos ensaios e atualizar `src/data/storyImages.json`
 powershell -NoProfile -File scripts/prepare-story-photos.ps1
 ```
 
-O script cria uma subpasta `optimized/` em cada pasta com fotos numeradas. São aceitas seis fotos, numeradas de 1 a 6, ou nenhuma enquanto o ensaio estiver pendente. Os retratos da abertura não entram nessa contagem. As versões preservam as proporções, com lado maior de até 2560 pixels e qualidade JPEG 88. Os textos de legenda permanecem separados da geração das imagens.
+O script cria uma subpasta `optimized/` em cada pasta com fotos numeradas. A quantidade esperada é configurada por participante em `$expectedCounts`: seis para Zélia, Jaime e Dorotilde e quatro para Luiz. A numeração começa em 1 e não pode ter lacunas ou repetições; uma pasta sem fotos numeradas é aceita enquanto seu ensaio estiver pendente. Os retratos da abertura não entram nessa contagem. As versões preservam as proporções, com lado maior de até 2560 pixels e qualidade JPEG 88. Os textos de legenda permanecem separados da geração das imagens.
 
 As 44 fotografias da galeria da Cidade do Idoso ficam em `public/images/cidadedoidoso/`, com os nomes `editadas_1.jpg` a `editadas_44.jpg`. A galeria segue essa ordem numérica e usa versões leves da subpasta `optimized/`: miniaturas na grade e imagens maiores na ampliação. O visualizador mantém a navegação e o fechamento na própria página, com os rótulos "Anterior" e "Próxima" também nas telas menores. Os originais permanecem no acervo do projeto.
 
@@ -133,7 +133,7 @@ Os dados editoriais ficam separados dos componentes em `src/data/`.
 | `image.credit` | Autoria da fotografia. |
 | `image.source` | Arquivo local aberto pelo link do crédito. |
 | `quote` | Frase da entrevista. |
-| `photos` | Seis fotos adicionais do ensaio, com descrição acessível e legenda. |
+| `photos` | Fotos adicionais do ensaio, com descrição acessível e legenda. |
 
 As fotografias, os nomes e as frases de abertura correspondem aos participantes. A narrativa abaixo da abertura é construída com fotos, pequenos fragmentos e falas nas legendas. Os espaços ao lado das imagens permanecem vazios, sem textos ou elementos de preenchimento.
 

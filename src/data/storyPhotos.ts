@@ -1,7 +1,7 @@
 import images from './storyImages.json';
 import type { StoryPhoto } from '../types';
 
-// Cada identificador acompanha o numero do arquivo original, de 01 a 06.
+// Cada identificador acompanha a numeracao do arquivo original.
 // Preencha caption com as legendas e falas editadas das entrevistas.
 // As descricoes em alt sao independentes das legendas visiveis.
 const editorial: Record<string, Pick<StoryPhoto, 'alt' | 'caption'>> = {
@@ -23,6 +23,10 @@ const editorial: Record<string, Pick<StoryPhoto, 'alt' | 'caption'>> = {
   'dorotilde-04': { alt: 'Dorotilde sorri ao lado de uma mulher e de um homem.', caption: '' },
   'dorotilde-05': { alt: 'Dorotilde, de óculos e blusa marrom, olha para baixo.', caption: '' },
   'dorotilde-06': { alt: 'Vista de trás dos cabelos grisalhos e do casaco de Dorotilde.', caption: '' },
+  'luiz-01': { alt: 'Luiz sorri e acena com a mão levantada no salão da Cidade do Idoso.', caption: '' },
+  'luiz-02': { alt: 'Retrato aproximado do rosto de Luiz sorrindo.', caption: '' },
+  'luiz-03': { alt: 'Luiz, com camiseta da Cidade do Idoso, sentado à mesa com um prato de comida.', caption: '' },
+  'luiz-04': { alt: 'Detalhe do rosto de Luiz, com o olhar voltado para o lado.', caption: '' },
 };
 
 export function getStoryPhotos(participant: keyof typeof images): StoryPhoto[] {
