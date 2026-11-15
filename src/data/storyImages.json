@@ -159,6 +159,13 @@
       "originalSrc": "./images/luiz/Luiz 4.jpg",
       "width": 2472,
       "height": 1648
+    },
+    {
+      "id": "luiz-05",
+      "src": "./images/luiz/optimized/Luiz 5.jpg",
+      "originalSrc": "./images/luiz/Luiz 5.jpg",
+      "width": 2472,
+      "height": 1648
     }
   ]
 }

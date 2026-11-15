@@ -1,9 +1,9 @@
 import { project } from '../data/project';
 import { Arrow } from './Arrow';
 
-export function SiteFooter() {
+export function SiteFooter({ afterStory = false }: { afterStory?: boolean }) {
   return (
-    <footer className="site-footer" aria-label="Créditos e contatos do projeto">
+    <footer className={'site-footer' + (afterStory ? ' site-footer--story' : '')} aria-label="Créditos e contatos do projeto">
       <div className="site-footer__inner">
         <div className="site-footer__project">
           <p className="eyebrow">{project.subtitle}</p>

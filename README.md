@@ -19,14 +19,17 @@ Todas as fotografias são de **Emily Gilioli** e integram o acervo local do proj
 - Retratos recortados na página inicial e fotografias completas como fonte das histórias expandidas.
 - Ajuste das imagens ao painel, preservando a proporção e preenchendo a área sem margens.
 - Nome completo e frase da entrevista na apresentação de cada participante.
+- Aberturas com aspas tipográficas em cobre e agrupamento dos nomes para equilibrar as quebras de linha.
 - Ensaios com seis fotos adicionais de Zélia, Jaime e Dorotilde e quatro de Luiz, inteiras e alinhadas alternadamente à esquerda e à direita, com os espaços laterais vazios.
 - Legendas imediatamente abaixo das fotos, acompanhando sua largura, em 10 px e entrelinha simples.
+- Contorno fino nas fotos dos ensaios e aparecimento suave de 180 ms ao entrar na tela, após o carregamento.
 - Navegação entre histórias, retorno à galeria e suporte ao histórico do navegador.
 - Indicador animado de rolagem na página inicial.
 - Capa da Cidade do Idoso em tela inteira, com apresentação revelada pelo botão “Conhecer a Cidade do Idoso”.
 - Galeria da Cidade do Idoso em uma tela própria, com 44 fotografias inteiras em colunas de alturas variadas.
 - Ampliação das fotografias, navegação por setas e descrições acessíveis no texto alternativo das imagens.
 - Créditos acadêmicos, autoria das fotografias e contatos do projeto.
+- Encerramento das histórias e créditos com fundo, margens e colunas alinhados, separados por uma linha discreta.
 
 ## Tecnologias
 
@@ -170,7 +173,7 @@ O script atualiza as imagens em `optimized/` e o manifesto `src/data/cityGallery
 
 A interface usa HTML semântico, textos alternativos e botões nativos com ativação por Enter e Espaço. A seleção de uma história direciona o foco ao nome do participante; o retorno à galeria restaura o foco no retrato selecionado.
 
-Escape retorna das histórias à galeria e fecha a apresentação da Cidade do Idoso. A preferência `prefers-reduced-motion` desativa animações e rolagem suave, mantendo a seta de continuação estática.
+Escape retorna das histórias à galeria e fecha a apresentação da Cidade do Idoso. A preferência `prefers-reduced-motion` desativa animações e rolagem suave, mantendo a seta de continuação estática e as fotos dos ensaios visíveis sem animação. O aparecimento de cada foto ocorre uma única vez; sem suporte a `IntersectionObserver`, as imagens são exibidas diretamente.
 
 Na galeria da Cidade do Idoso, a ampliação usa um diálogo modal com foco contido: Escape fecha a fotografia e devolve o foco à miniatura. As setas esquerda e direita navegam pelas fotos, e Home/End acessam a primeira e a última. O retorno à apresentação do programa abre seus detalhes e posiciona o foco no link da galeria.
 

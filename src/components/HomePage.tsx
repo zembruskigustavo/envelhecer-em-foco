@@ -14,6 +14,8 @@ export function HomePage() {
   const { selectedId, galleryOpen, navigate, openCityGallery, closeCityGallery } = useStoryNavigation();
   const person = interviewees.find((item) => item.id === selectedId);
   const hasNarrative = Boolean(person?.photos.length);
+  const [firstName = '', ...otherNames] = person?.fullName.split(' ') ?? [];
+  const quoteText = person?.quote.replace(/^["“]|["”]$/g, '') ?? '';
   const portraitButtons = useRef(new Map<string, HTMLButtonElement>());
   const lastSelected = useRef<string | null>(null);
   const storyHeading = useRef<HTMLHeadingElement>(null);
@@ -67,10 +69,10 @@ export function HomePage() {
               <BackButton onBack={() => navigate(null)} />
               <div className="story-intro__body">
                 <p className="eyebrow">{project.title}</p>
-                <h1 ref={storyHeading} tabIndex={-1}>{person.fullName}</h1>
+                <h1 ref={storyHeading} tabIndex={-1}>{firstName}{' '}<span className="story-intro__name-rest">{otherNames.join(' ')}</span></h1>
                 <div className="story-intro__quote">
                   <p className="eyebrow">Em suas palavras</p>
-                  <blockquote>{person.quote}</blockquote>
+                  <blockquote><span className="story-intro__quote-mark" aria-hidden="true">“</span>{quoteText}<span aria-hidden="true">”</span></blockquote>
                 </div>
                 {hasNarrative && <a className="reading-link" href="#narrativa">Percorra a história <span aria-hidden="true">↓</span></a>}
               </div>
@@ -82,7 +84,7 @@ export function HomePage() {
         {!person && <CitySection galleryOpen={galleryOpen} onOpenGallery={openCityGallery} />}
       </main>
       {galleryOpen && <CityGallery onBack={closeCityGallery} />}
-      <SiteFooter />
+      <SiteFooter afterStory={Boolean(person)} />
     </>
   );
 }

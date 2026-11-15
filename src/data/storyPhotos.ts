@@ -27,6 +27,7 @@ const editorial: Record<string, Pick<StoryPhoto, 'alt' | 'caption'>> = {
   'luiz-02': { alt: 'Retrato aproximado do rosto de Luiz sorrindo.', caption: '' },
   'luiz-03': { alt: 'Luiz, com camiseta da Cidade do Idoso, sentado à mesa com um prato de comida.', caption: '' },
   'luiz-04': { alt: 'Detalhe do rosto de Luiz, com o olhar voltado para o lado.', caption: '' },
+  'luiz-05': { alt: 'Luiz, em momento de oração de benção ao alimento.', caption: '' },
 };
 
 export function getStoryPhotos(participant: keyof typeof images): StoryPhoto[] {
